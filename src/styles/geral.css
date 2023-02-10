@@ -1,0 +1,127 @@
+*,h1,button,ul,li,h2,h3,body{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif, Arial, Helvetica;
+}
+
+
+.btn{
+  border: 0px;
+  font-weight: bold;
+  border: #253D4A solid;
+  color: #253D4A;
+  background: linear-gradient(
+    45deg,
+    #a7c4d2,
+    #fff,
+    #a7c4d2
+  );
+  background-size: 300% 300%;
+  animation: colors 2s ease infinite;
+  padding: 15px;
+  border-radius: 5px;
+width: 120px;
+}
+
+.btn:hover{
+  transition: 0.2s;
+  background: #a7c4d2;
+}
+
+@keyframes colors {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+.link{
+  margin: 0px 0px;
+  background: #253D4A;
+  padding: 5px 15px;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #a7c4d2;
+  transition: 0.3s;
+  text-decoration: none;
+  border: 0px;
+  text-transform: capitalize;
+ margin-bottom: 5px;
+
+}
+
+.font p{
+  font-size: 1.1rem;
+}
+
+.link:hover{
+  color: #fff;
+  background:#43677A ;
+}
+
+
+.doacoes-inicio{
+  padding-bottom: 30px;
+}
+
+
+.paginas{
+  transform: scale(0.9);
+  animation: scale 0.3s forwards;
+}
+
+
+@keyframes scale {
+  
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.btn-close-tags{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 5px;
+  top: 5px;
+  border: solid 2px #253D4A;
+
+}
+.btn-close-tags:hover{
+  background: #253d4a;
+  color: white;
+}
+.btns-galeria{
+  border: 0px;
+ background: transparent;
+}
+.btns-galeria img{
+  cursor: pointer;
+}
+.seta-galeria{
+  rotate: 180deg;
+}
+
+.fechar-galeria{
+  border: 0px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: transparent;
+}
+.fechar-galeria img{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
