@@ -23,14 +23,9 @@ import img17 from '../fotosGaleria/35a.jpg';
 import img18 from '../fotosGaleria/40a.jpg';
 import img19 from '../fotosGaleria/45a.jpg';
 import img20 from '../fotosGaleria/50a.jpg';
-import Doe from './Doe';
 import styled from 'styled-components';
 
-const Doar = styled.div`
-padding-top: 20px;
-display: grid;
-place-content: center;
-`
+
 
 const Container = styled.div`
   margin:  0 auto;
@@ -61,11 +56,7 @@ const View = styled.div`
   z-index: 15;
 `;
 // rgba(0, 0, 0, 0.6)
-const ImgZoom = styled.img`
-  width: auto;
-  max-width: 90%;
-  max-height: 90%;
-`;
+
 
 const images = [
   img1,
@@ -112,9 +103,6 @@ const GaleriaFotos = () => {
 
   return (
     <>
-    <Doar>
-    <Doe/>
-    </Doar>
       {data.img && (
         <View>
           <button
