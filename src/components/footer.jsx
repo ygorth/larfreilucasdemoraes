@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import '../styles/geral.css';
 import telefone from '../assets/telefone.svg';
 import email from '../assets/email.svg';
+import localmapa from '../assets/localmapa.png';
 import local from '../assets/local.svg';
 import aspas from '../assets/aspas.svg';
 import face from '../assets/face.svg';
@@ -39,6 +40,10 @@ place-items: center;
 div{
   max-width: 350px;
 
+}
+
+img{
+  width: 200px;
 }
 `
 
@@ -130,7 +135,7 @@ export const Footer = () => {
           target="_blank"   rel="noopener noreferrer"
         >
           
-          
+          <img src={localmapa} alt="" />
         </a>
         {/* <Google/> */}
       </div>
