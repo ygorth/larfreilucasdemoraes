@@ -134,7 +134,7 @@ export const Footer = () => {
           href="https://www.google.com/maps/place/Lar+Frei+Lucas+de+Mor%C3%A1es/@-12.9269149,-38.5051637,16z/data=!4m6!3m5!1s0x7160f8aad4d64b7:0x5979ad4612615141!8m2!3d-12.9260467!4d-38.5060223!16s%2Fg%2F11f1wfzxtr?hl=pt-BR"
           target="_blank"   rel="noopener noreferrer"
         >
-          
+          teste
           <img src={localmapa} alt="" />
         </a>
         {/* <Google/> */}
