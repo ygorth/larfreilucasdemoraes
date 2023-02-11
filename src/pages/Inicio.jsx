@@ -8,6 +8,7 @@ import ItemsConsumidos from '../components/ItemsConsumidos';
 import Doe from '../components/Doe';
 
 const Home = styled.section`
+
   position: relative;
   display: grid;
   place-content: center;
@@ -39,7 +40,8 @@ const Destaque = styled.section`
 `;
 
 const Content = styled.div`
-
+  max-width: 100vw;
+  width: 100%;
   display: grid;
   grid-template-columns: minmax(400px, 1500px) minmax(400px, 1000px);
   max-width: 100vw;

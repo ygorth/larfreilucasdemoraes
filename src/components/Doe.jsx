@@ -27,6 +27,7 @@ export const Section = styled.section`
   ul {
    display: flex;
     gap: 10px;
+    place-content: center;
     place-items: center;
     flex-wrap: wrap;
     padding: 0px 40px;
