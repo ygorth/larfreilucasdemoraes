@@ -21,12 +21,7 @@ const Home = styled.section`
     font-size: 2rem;
   }
 
-  p {
-    max-width: 120ch;
-    margin: 5px;
-    font-weight: bold;
-    text-align: start;
-  }
+
 
   h5 {
     font-family: 'Lobster', cursive;
@@ -34,6 +29,12 @@ const Home = styled.section`
   }
 `;
 
+const Text = styled.p`
+    max-width: 120ch;
+    margin: 5px;
+    font-weight: bold;
+    text-align: start;
+`
 const Destaque = styled.section`
   font-size: 1.2rem;
   font-family: 'Lobster', cursive;
@@ -109,26 +110,26 @@ const Inicio = () => {
         <Content className="font">
           <div>
             <h2>Sobre o Lar </h2>
-            <p>
+            <Text>
               O Lar Frei Lucas de Moráes é uma instituição de caridade, que
               abriga idosos doentes, abandonados e totalmente dependentes de
               terceiros, e tem como objetivo assistir a essas pessoas que não
               contam mais com o apoio e o zelo das suas famílias.
-            </p>
-            <p>
+            </Text>
+            <Text>
               É uma instituição que vive, <strong>exclusivamente</strong>, da
               doação e interesse de pessoas e empresas que contribuem para a sua
               manutenção e subsistência.
-            </p>
+            </Text>
             <Destaque>
               Ajude-nos! Fome e doença não esperam... mobilize-se!
             </Destaque>
-            <p>
+            <Text>
               Sem a sua caridade o Lar não tem como cuidar destes idosos.
               <strong>Venha nos conhecer</strong>, dê-nos a alegria da sua
               visita.
-            </p>
-            <p>
+            </Text>
+            <Text>
               Nosso endereço é{' '}
               <strong>
                 Rua Guilherme Marback, n° 22, Bonfim CEP 40.415-160 Salvador -
@@ -142,27 +143,27 @@ const Inicio = () => {
                 aqui
               </Lin>{' '}
               para ver no mapa.
-            </p>
+            </Text>
 
-            <p>
+            <Text>
               Os idosos do Lar Frei Lucas de Moráes retribuem de forma sincera
               através do seu agradecimento silencioso. Que Deus lhe retorne em
               bênçãos e prosperidade.
-            </p>
+            </Text>
             <h3>Área Médica</h3>
-            <p>
+            <Text>
               O Lar necessita de profissionais nas áreas de geriatria, nutrição,
               enfermagem, assistência social e fisioterapia. Quem puder dedicar
               parte do seu tempo de forma voluntária, os idosos precisam
               urgentemente destes atendimentos. Procure-nos!
-            </p>
+            </Text>
             <a className="link ">Contato</a>
-            <p>
+            <Text>
               Precisamos de contribuições em dinheiro, alimentos, roupas,
               produtos de higiene pessoal e de limpeza. Conheça a nossa
               história, as nossas necessidades. Clique em Saiba Mais para
               informações sobre doações!
-            </p>
+            </Text>
 
             <Link className="link " to="/doacoes">
               Saiba Mais

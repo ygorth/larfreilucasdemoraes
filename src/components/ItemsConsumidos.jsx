@@ -10,7 +10,6 @@ const Container = styled.div`
   display: grid;
   place-content: center;
   place-items: center;
-
 `;
 
 const Items = styled.div`
@@ -26,7 +25,7 @@ const Items = styled.div`
 
   div {
     width: 250px;
-    height: 270px;
+    height: 280px;
     border-radius: 19px;
     background: #a7c4d2;
     box-shadow: 8px 8px 16px #697b84, -8px -8px 16px #e5ffff;
@@ -34,11 +33,6 @@ const Items = styled.div`
     justify-content: center;
     place-items: center;
     color: #253d4a;
-    p {
-      text-align: center;
-      font-size: 1.2rem;
-      padding-bottom: 5px;
-    }
 
     &:nth-child(odd) {
       background: #253d4a;
@@ -53,7 +47,12 @@ const Items = styled.div`
     width: 150px;
   }
 `;
-const Insumos = styled.p``;
+const Insumos = styled.p`
+  display: inline-block;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+`;
 
 const ItemsConsumidos = () => {
   return (
