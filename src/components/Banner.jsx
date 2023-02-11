@@ -4,6 +4,8 @@ import insta from '../assets/insta.svg';
 import face from '../assets/face.svg';
 import ave from '../assets/ave.svg';
 import local from '../assets/local.svg';
+import '../styles/geral.css';
+
 
 const BannerP = styled.main`
   font-family: 'Lobster', cursive;
@@ -13,6 +15,7 @@ const BannerP = styled.main`
   background: #a7c4d2;
   margin: 0 auto;
   position: relative;
+  place-items: center;
   a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.1rem;
@@ -21,7 +24,7 @@ const BannerP = styled.main`
     font-weight: bold;
     color: #253d4a;
     transition: 0.3s;
-
+    padding-top: 10px;
     &:hover {
       color: #43677a;
     }
@@ -34,19 +37,19 @@ const BannerP = styled.main`
     font-size: 3rem;
     color: #253d4a;
     background: #a7c4d2;
-  }
-  &::before {
-    padding: 0;
-    margin: 0;
-    content: url(${ave});
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: -15px;
-    left: 0px;
-    z-index: 0;
-  }
 
+    &::before {
+      padding: 0;
+      margin: 0;
+      content: url(${ave});
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: -15px;
+      left: 0px;
+      z-index: 0;
+    }
+  }
   img {
     display: block;
     max-width: 40px;
@@ -78,44 +81,45 @@ const BannerP = styled.main`
     background: #a7c4d2;
     gap: 10px;
     padding: 0px 10px;
-    margin-right: 50px;
     z-index: 10;
     place-items: center;
   }
-
-  @media (max-width: 1065px) {
+  @media (max-width: 1200px) {
     h1 {
-      font-size: 2.5rem;
+      padding: 10px 10px 10px 100px;
     }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 800px) {
     h1 {
-      font-size: 1.7rem;
+      font-size: 2rem;
+      padding: 10px 10px;
     }
-  }
-  @media (max-width: 700px) {
-    h1 {
-      padding: 10px 5px;
-      top: 5px;
-      left: 20px;
-      font-size: 1.6rem;
-    }
-    &::before {
+    h1:before {
       display: none;
     }
-    img {
-      border-bottom: solid #a7c4d2 10px;
-      z-index: 2;
-    }
   }
+
 `;
 
+const ContainerNav = styled.div`
+  display: flex;
+    flex-wrap: wrap;
+    background: #a7c4d2;
+    gap: 10px;
+    padding: 0px 10px;
+    z-index: 10;
+    place-items: center;
+    @media (max-width: 1038px){
+      margin-right: 80px;
+    }
+    
+`
 const Banner = () => {
   return (
-    <BannerP>
-      <h1>Lar Frei Lucas de Moráes</h1>
-      <div>
+    <BannerP className="responsivo-nav-title">
+      <h1 className="responsivo-title">Lar Frei Lucas de Moráes</h1>
+      <ContainerNav>
         <div>
           <a
             href="https://www.google.com/maps/place/Lar+Frei+Lucas+de+Mor%C3%A1es/@-12.9269149,-38.5051637,16z/data=!4m6!3m5!1s0x7160f8aad4d64b7:0x5979ad4612615141!8m2!3d-12.9260467!4d-38.5060223!16s%2Fg%2F11f1wfzxtr?hl=pt-BR"
@@ -126,6 +130,7 @@ const Banner = () => {
           </a>
 
           <a
+            className="responsive-local"
             href="https://www.google.com/maps/place/Lar+Frei+Lucas+de+Mor%C3%A1es/@-12.9269149,-38.5051637,16z/data=!4m6!3m5!1s0x7160f8aad4d64b7:0x5979ad4612615141!8m2!3d-12.9260467!4d-38.5060223!16s%2Fg%2F11f1wfzxtr?hl=pt-BR"
             target="_blank"
             rel="noopener noreferrer"
@@ -134,6 +139,7 @@ const Banner = () => {
             Brasil
           </a>
         </div>
+        <div>
         <a
           href="https://www.facebook.com/larfreilucas"
           target="_blank"
@@ -148,7 +154,8 @@ const Banner = () => {
         >
           <img src={insta} alt="instagram" />
         </a>
-      </div>
+        </div>
+      </ContainerNav>
     </BannerP>
   );
 };

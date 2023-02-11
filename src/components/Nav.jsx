@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import menu from '../assets/hamburger.png';
+import menu from '../assets/mobile.svg';
 import fechar from '../assets/x.svg';
 import { useState } from 'react';
+import '../styles/geral.css';
 
 const Nave = styled.div`
   padding: 8px;
@@ -32,23 +33,22 @@ const Nave = styled.div`
     }
   }
 
-  @media (max-width: 700px) {
+  @keyframes animar22 {
+    from{
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @media (max-width: 1038px) {
     padding: 5px 10px;
     display: ${({ mobile }) => (mobile ? 'none' : 'block')};
     opacity: 1;
-    transform: translateY(0px);
-    animation: animar 0.3s forwards;
-
-    @keyframes animar {
-      from {
-        opacity: 0;
-        transform: translateY(-80px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0px);
-      }
-    }
+    animation: animar22 0.3s ease ;
 
     ul {
       opacity: 1;
@@ -64,15 +64,23 @@ const Botao = styled.button`
   border: 0;
   background: transparent;
   position: absolute;
-  top: 10px;
-  right: 8px;
-  @media (max-width: 700px) {
+  top: 20px;
+  right: 20px;
+  z-index: 30;
+  @media (max-width: 1038px) {
     display: block;
   }
 
   img {
-    max-width: 30px;
+    max-width: 50px;
     cursor: pointer;
+    z-index: 30;
+  }
+  @media (max-width: 394px) {
+    top: 80px;
+    img {
+      max-width: 40px;
+    }
   }
 `;
 
@@ -110,7 +118,7 @@ const Nav = () => {
           </li>
         </ul>
       </Nave>
-      <Botao onClick={abrirFechar}>
+      <Botao className="menu-mobile" onClick={abrirFechar}>
         <img src={mobile ? menu : fechar} />
       </Botao>
     </>

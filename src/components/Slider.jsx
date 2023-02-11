@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import seta from '../assets/seta.svg';
@@ -15,7 +15,15 @@ import img9 from '../fotos/img9.png';
 import img10 from '../fotos/img10.png';
 import img11 from '../fotos/img11.png';
 import img12 from '../fotos/img12.png';
+import styled from 'styled-components';
 
+const Images = styled.div`
+
+@media (max-width: 800px){
+ 
+}
+
+`
 
 const imagens = [
   [img1, img2, img3],
@@ -24,11 +32,12 @@ const imagens = [
   [img10, img11, img12],
 ];
 
+
 const Slider = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
 
- 
+
   const scrollPrev = React.useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -43,15 +52,17 @@ const Slider = () => {
         {imagens.map((i) => (
           <div key={i} className="embla__slide">
             {i.map((item) => (
-              <img key={item} src={item} />
+              <div key={item}>
+                <img src={item} />
+              </div>
             ))}
           </div>
         ))}
       </div>
-      <button className="embla__prev" onClick={scrollPrev}>
+      <button className="embla__prev embla__button" onClick={scrollPrev}>
         <img src={seta} alt="seta" />
       </button>
-      <button className="embla__next" onClick={scrollNext}>
+      <button className="embla__next embla__button" onClick={scrollNext}>
         <img src={seta} alt="seta" />
       </button>
     </div>

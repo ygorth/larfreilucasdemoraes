@@ -1,7 +1,0 @@
-
-
-@media (max-width: 1000px){
-.lista-doacoes{
-  grid-template-columns: minmax(200px, 300px);
-}
-}

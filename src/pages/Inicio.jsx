@@ -2,10 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import '../styles/geral.css';
 import { Link } from 'react-router-dom';
-import comida from '../assets/comida.svg';
-import frauda from '../assets/frauda.svg';
-import roupa from '../assets/roupa.svg';
-import medicamento from '../assets/medicamento.svg';
 import { Videos } from '../components/videos';
 import aspas from '../assets/aspas.svg';
 import ItemsConsumidos from '../components/ItemsConsumidos';
@@ -14,6 +10,7 @@ import Doe from '../components/Doe';
 const Home = styled.section`
   position: relative;
   display: grid;
+  place-content: center;
   max-width: 100vw;
   margin-bottom: 50px;
   color:#253D4A ;
@@ -24,7 +21,7 @@ const Home = styled.section`
   }
 
   p {
-    max-width: 100ch;
+    max-width: 120ch;
     margin: 5px;
     font-weight: bold;
     text-align: start;
@@ -44,19 +41,23 @@ const Destaque = styled.section`
 const Content = styled.div`
 
   display: grid;
-  grid-template-columns: minmax(400px, 1100px) minmax(400px, 800px);
+  grid-template-columns: minmax(400px, 1500px) minmax(400px, 1000px);
   max-width: 100vw;
   border-radius: 0px;
   background: #e8ebed;
   box-shadow: 9px 9px 18px #c5c8c9, -9px 4px 18px #ffffff;
+  div {
+    padding: 30px 20px 20px 50px;
+  }
 
   @media (max-width: 900px) {
-    grid-template-columns:minmax(400px, 1100px);
+    grid-template-columns:minmax(200px, 1100px);
+   div{
+    padding: 10px;
+   }
   }
 
-  div {
-    padding: 30px 20px 20px 40px;
-  }
+ 
 `;
 const Lin = styled.a`
   margin: 0px;
@@ -65,12 +66,41 @@ const Lin = styled.a`
 const Aspas = styled.img`
   position: absolute;
   max-width: 200px;
-  top: 400px;
+  top:500px;
   right: 10px;
   rotate: 175deg;
+  @media (max-width: 1500px) {
+      max-width: 150px;
+      top: 560px;
+  }
+  @media (max-width: 1418px) {
+      max-width: 100px;
+      top: 650px;
+  }
+  @media (max-width: 1162px) {
+      top: 750px;
+  }
+  @media (max-width: 1042px) {
+      top: 800px;
+  }
+  @media (max-width: 900px) {
+     display: none;
+  }
 `;
 
 const Inicio = () => {
+  const [screen, setScreen] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setScreen(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <>
       <Home className="paginas">
@@ -140,7 +170,7 @@ const Inicio = () => {
             <Doe />
           </article>
         </Content>
-        <Aspas src={aspas} />
+        <Aspas className='resposivo-detalhe aspas-h' screen={screen} src={aspas} />
         <ItemsConsumidos />
         <Videos />
       </Home>

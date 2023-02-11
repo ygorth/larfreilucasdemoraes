@@ -8,14 +8,18 @@ import Banner from './components/Banner';
 import Doe from './components/Doe';
 import { Footer } from './components/footer';
 
+
+
+
+
 function App() {
   return (
-    <>  
-    <Banner />
+    <>
+      <Banner />
       <Slider />
       <Nav />
       <Outlet />
-      <Footer/>
+      <Footer />
     </>
   );
 }

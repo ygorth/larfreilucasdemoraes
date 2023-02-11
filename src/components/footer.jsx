@@ -4,19 +4,19 @@ import '../styles/geral.css';
 import telefone from '../assets/telefone.svg';
 import email from '../assets/email.svg';
 import local from '../assets/local.svg';
+import mapa from '../assets/mapa.png';
 import aspas from '../assets/aspas.svg';
 import face from '../assets/face.svg';
 import insta from '../assets/insta.svg';
 import { Google } from './Mapa';
 
-const Container = styled.div`
+const Container = styled.footer`
   color: #253d4a;
   z-index: 1;
   position: relative;
   background: #a7c4d2;
   padding: 50px 20px 15px 20px;
   display: grid;
-  grid-template-columns: 300px 300px 300px;
   place-items: center;
   place-content: center;
   gap: 20px;
@@ -28,10 +28,20 @@ const Container = styled.div`
     margin-bottom: 10px;
   }
 
-  @media (max-width: 900px) {
-    grid-template-columns: 300px;
-  }
+ 
 `;
+
+const ContainerFlex= styled.div`
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+place-content: center;
+place-items: center;
+div{
+  max-width: 350px;
+
+}
+`
 
 const Contato = styled.div`
   display: flex;
@@ -58,17 +68,22 @@ const Aspas = styled.img`
   position: absolute;
   max-width: 200px;
   top: -100px;
-  left: 50px;
+  left: 10px;
   z-index: -1;
+  @media (max-width: 1500px) {
+      max-width: 150px;
+  }
+  @media (max-width: 1400px) {
+      max-width: 100px;
+      top: -50px ;
+  }
 `;
 const Final = styled.p`
-  grid-column: 1/4;
+ 
   text-align: center;
   z-index: 3;
 
-  @media (max-width: 900px) {
-    grid-column: 1;
-  }
+ 
 `;
 
 export const Footer = () => {
@@ -76,7 +91,8 @@ export const Footer = () => {
 
   return (
     <Container>
-      <Aspas src={aspas} />
+      <Aspas className='resposivo-detalhe aspas-f' src={aspas} />
+     <ContainerFlex>
       <div>
         <h2>
           Lar Frei Lucas<br></br> de Moráes
@@ -110,19 +126,22 @@ export const Footer = () => {
         </Contato>
       </div>
       <div>
-        {/* <a
+        <a
           href="https://www.google.com/maps/place/Lar+Frei+Lucas+de+Mor%C3%A1es/@-12.9269149,-38.5051637,16z/data=!4m6!3m5!1s0x7160f8aad4d64b7:0x5979ad4612615141!8m2!3d-12.9260467!4d-38.5060223!16s%2Fg%2F11f1wfzxtr?hl=pt-BR"
-          target="_blank"
+          target="_blank"   rel="noopener noreferrer"
         >
           <Mapa src={mapa} alt="mapa" />
           
-        </a> */}
-        <Google/>
+        </a>
+        {/* <Google/> */}
       </div>
+      </ContainerFlex>
+
       <Final>
         Disclaimer: Este site foi construído e é mantido por voluntários que
         apoiam o trabalho desta Instituição.
       </Final>
     </Container>
+    
   );
 };

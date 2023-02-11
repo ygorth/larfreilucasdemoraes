@@ -8,6 +8,8 @@ export const Section = styled.section`
   background: transparent;
   border-radius: 5px;
   color: #253d4a;
+  padding-top: 30px;
+  
   ul li p {
     max-width: 40ch;
     background: rgba(0, 0, 0, 0.1);
@@ -54,7 +56,6 @@ export const Section = styled.section`
 const Doe = () => {
   return (
     <Section>
-      <div>
         <ul className="lista-doacoes">
           <li>
             <h3>Doações Urgentes!</h3>
@@ -81,7 +82,6 @@ const Doe = () => {
             </Link>
           </li>
         </ul>
-      </div>
     </Section>
   );
 };
