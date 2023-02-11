@@ -20,6 +20,8 @@ const Video = styled.div`
     background: #a7c4d2;
     box-shadow: 8px 8px 16px #697b84, -8px -8px 16px #e5ffff;
   }
+
+
 `;
 
 const Title = styled.h2`
@@ -43,20 +45,32 @@ const Materia = styled.h3`
    height: 450px;
    width: ${({ tamanho }) => tamanho + 'px'};
    transition: 0.3s;
+
+     
+  @media (max-width: 1200px) {
+ 
+    height: 300px;
+ 
+    
+}
 `;
 
 
 
 export const Videos = () => {
   const [videos, setVideos] = useState([240, 240, 240, 240]);
+  
+
 
   function handleVideo(index) {
+    const screenWidth = window.innerWidth;
     const newVideos = videos.map((video, i) => {
       if (i === index) {
-        return video === 240 ? 600 : 240;
+        return video === 240 ? (screenWidth < 700 ? 300 : (screenWidth < 1200 ? 400 : 600)) : 240;
       }
-      return video === 600 ? 240 : video;
+      return video === 600 || video === 400 || video === 300 ? 240 : video;
     });
+  
     setVideos(newVideos);
   }
 
@@ -87,7 +101,7 @@ export const Videos = () => {
               'Matéria na Instituição Lar Frei Lucas de Moráes pela TV Aratu',
           },
         ].map((video, index) => (
-          <div key={video.id}>
+          <div key={video.id} >
             <Video1 src={video.src} tamanho={videos[index]} />
             <Materia tamanho={videos[index]}>{video.title}</Materia>
             <button className="link" onClick={() => handleVideo(index)}>
