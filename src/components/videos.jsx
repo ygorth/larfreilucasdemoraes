@@ -66,7 +66,7 @@ export const Videos = () => {
     const screenWidth = window.innerWidth;
     const newVideos = videos.map((video, i) => {
       if (i === index) {
-        return video === 240 ? (screenWidth < 700 ? 300 : (screenWidth < 1200 ? 400 : 600)) : 240;
+        return video === 240 ? (screenWidth < 700 ? 320 : (screenWidth < 1200 ? 400 : 600)) : 240;
       }
       return video === 600 || video === 400 || video === 300 ? 240 : video;
     });

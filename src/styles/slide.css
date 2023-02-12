@@ -147,6 +147,15 @@ object-fit: cover;
   .embla__slide img{
     height: 130px;
   }
+  .embla__next{
+    display: none ;
+  }
+  .embla__prev{
+    display: none ;
+  }
+  .embla__slide img{
+    border-radius: 5px;
+  }
 }
 @media (max-width: 460px){
   .embla__slide img{

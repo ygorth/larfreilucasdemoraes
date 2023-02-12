@@ -44,6 +44,7 @@ div{
 
 img{
   width: 200px;
+  border-radius: 8px;
 }
 `
 
@@ -141,7 +142,7 @@ export const Footer = () => {
       </ContainerFlex>
 
       <Final>
-        Disclaimer: Este site foi construído e é mantido por voluntários que
+        Este site foi construído por: Luciano R. Martinello e é mantido por voluntários que
         apoiam o trabalho desta Instituição.
       </Final>
     </Container>
