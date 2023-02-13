@@ -5,6 +5,7 @@ import '../styles/galeriafotos.css';
 import fechar from '../assets/fechargaleria.svg';
 import seta from '../assets/setagaleria.svg';
 import seta2 from '../assets/seta.svg';
+import setarigth from '../assets/setarigth.svg';
 import img1 from '../fotosGaleria/1.jpg';
 import img2 from '../fotosGaleria/2.jpg';
 import img3 from '../fotosGaleria/3.jpg';
@@ -120,7 +121,7 @@ const GaleriaFotos = () => {
             className="btns-mobile-galeria"
             onClick={() => imgAction('next-img')}
           >
-            <img className="seta-galeria" src={seta2} alt="icon seta" />
+            <img src={setarigth} alt="icon seta" />
           </button>
        
           </div>

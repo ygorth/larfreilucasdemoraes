@@ -142,7 +142,7 @@ export const Footer = () => {
       </ContainerFlex>
 
       <Final>
-        Este site foi construído por: Luciano R. Martinello e é mantido por voluntários que
+        Este site foi desenvolvido por: Luciano R. Martinello e é mantido por voluntários que
         apoiam o trabalho desta Instituição.
       </Final>
     </Container>
