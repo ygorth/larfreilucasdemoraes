@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import '../styles/geral.css';
+import '../styles/galeriafotos.css';
 import fechar from '../assets/fechargaleria.svg';
 import seta from '../assets/setagaleria.svg';
+import seta2 from '../assets/seta.svg';
 import img1 from '../fotosGaleria/1.jpg';
 import img2 from '../fotosGaleria/2.jpg';
 import img3 from '../fotosGaleria/3.jpg';
@@ -39,22 +41,7 @@ const Container = styled.div`
   }
 `;
 
-const View = styled.div`
-  top: 0px;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
-  position: fixed;
-  display: grid;
-  grid-template-columns: 200px 1fr 200px;
-  align-items: center;
-  justify-items: center;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  z-index: 15;
-`;
+
 // rgba(0, 0, 0, 0.6)
 
 
@@ -104,25 +91,40 @@ const GaleriaFotos = () => {
   return (
     <>
       {data.img && (
-        <View>
+        <div className='responsivo-galeria'>
           <button
             className="btns-galeria"
             onClick={() => imgAction('prev-img')}
           >
-            <img className="seta-galeria" src={seta} alt="icon seta" />
+            <img className="seta-galeria " src={seta} alt="icon seta" />
           </button>
-          <img src={data.img} />
+          <img className='img-galeria' src={data.img} />
           <button className="fechar-galeria" onClick={() => imgAction('')}>
             <img src={fechar} alt="icon fechar" />
           </button>
 
           <button
-            className="btns-galeria"
+            className="btns-galeria "
             onClick={() => imgAction('next-img')}
           >
             <img src={seta} alt="icon seta" />
           </button>
-        </View>
+          <div className='mobile-setas'>
+          <button
+            className="btns-mobile-galeria"
+            onClick={() => imgAction('prev-img')}
+          >
+            <img src={seta2} alt="icon seta" />
+          </button>
+          <button
+            className="btns-mobile-galeria"
+            onClick={() => imgAction('next-img')}
+          >
+            <img className="seta-galeria" src={seta2} alt="icon seta" />
+          </button>
+       
+          </div>
+        </div>
       )}
       <Container>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>

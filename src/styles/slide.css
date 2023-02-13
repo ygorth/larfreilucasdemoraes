@@ -28,7 +28,7 @@
 }
 .embla__prev{
 position: absolute;
-left: -10px;
+left: 0px;
 top: 0px;
 background:transparent;
 border: 0px;
@@ -40,7 +40,7 @@ cursor: pointer;
 
 .embla__next{
   position: absolute;
- right: -10px;
+ right: 0px;
   top: 0px;
   background: transparent;
 border: 0px;
@@ -53,8 +53,11 @@ cursor: pointer;
 
 .embla__next img{
   rotate: 180deg;
+ max-width: 30px;
 }
-
+.embla__prev img{
+ max-width: 30px;
+}
 
 .slide{
   display: flex;

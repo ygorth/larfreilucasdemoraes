@@ -16,7 +16,7 @@ color:#253D4A ;
 
   p {
     max-width: 200ch;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     font-weight: 500;
     text-align: center;
   }
@@ -60,9 +60,9 @@ const Content = styled.div`
 `;
 
 const Info = styled.div`
-position: absolute;
 background: #253D4A;
 top: 140px;
+margin-bottom: 10px;
 z-index: 1;
 padding: 5px 15px;
 border-radius: 15px;
@@ -83,8 +83,9 @@ const Doacoes = () => {
           exclusivamente de sua doação para continuar existindo.
         </p>
         
-        <Info>Informações para doação:</Info>
+        
         <ul>   
+        <Info>Informações para doação:</Info>
           <li>
             <span>Caixa Econômica Federal</span>
           </li>
