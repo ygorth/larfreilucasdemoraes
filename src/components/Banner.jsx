@@ -84,10 +84,18 @@ const BannerP = styled.main`
     z-index: 10;
     place-items: center;
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1500px) {
+   
+    a{
+      max-width: 40ch;
+    }
+  }
+  @media (max-width: 1250px) {
     h1 {
+      font-size: 2.5rem;
       padding: 10px 10px 10px 100px;
     }
+  
   }
 
   @media (max-width: 800px) {
