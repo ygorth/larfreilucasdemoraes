@@ -113,7 +113,7 @@ function validate (){
           placeholder="Digite seu nome"
           onChange={({ target }) => setNome(target.value)}
         />
-        {nomeErr && <p>incira um nome</p>}
+        {nomeErr && <p>insira um nome</p>}
         <label htmlFor="email">Email</label>
         <input
           type="text"
@@ -121,7 +121,7 @@ function validate (){
           id="email"
           placeholder="Digite seu email"
           onChange={({ target }) => setEmail(target.value)}
-        /> {emailErr && <p>incira um email valido</p>}
+        /> {emailErr && <p>insira um email valido</p>}
         <label htmlFor="msg">Mensagem</label>
         <textarea
               id="msg"
@@ -131,7 +131,7 @@ function validate (){
               placeholder="digite sua mensagem"
               onChange={({ target }) => setMensagem(target.value)}
             />
-            {msgErr && <p>incira uma mensagem</p>}
+            {msgErr && <p>insira uma mensagem</p>}
         <button onClick={validate}>Enviar</button>
       </Form>
      
