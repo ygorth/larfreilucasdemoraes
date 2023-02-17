@@ -66,8 +66,10 @@ const Redes = styled.img`
     animation: redes 1s infinite;
   }
 `;
-const Mapa = styled.img`
-  max-width: 200px;
+const Mapa = styled.iframe`
+  max-width: 220px;
+  max-height:150px;
+  border-radius: 8px;
 `;
 const Aspas = styled.img`
   position: absolute;
@@ -131,13 +133,11 @@ export const Footer = () => {
         </Contato>
       </div>
       <div>
-        <a
-          href="https://www.google.com/maps/place/Lar+Frei+Lucas+de+Mor%C3%A1es/@-12.9269149,-38.5051637,16z/data=!4m6!3m5!1s0x7160f8aad4d64b7:0x5979ad4612615141!8m2!3d-12.9260467!4d-38.5060223!16s%2Fg%2F11f1wfzxtr?hl=pt-BR"
-          target="_blank"   rel="noopener noreferrer"
-        >
-          <img src={localmapa} alt="" />
-        </a>
+     
+       
+     
         {/* <Google/> */}
+        <Mapa src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7777.402438063098!2d-38.5051637!3d-12.9269149!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7160f8aad4d64b7%3A0x5979ad4612615141!2sLar%20Frei%20Lucas%20de%20Mor%C3%A1es!5e0!3m2!1spt-BR!2sbr!4v1676651134887!5m2!1spt-BR!2sbr" referrerPolicy="no-referrer-when-downgrade"></Mapa>
       </div>
       </ContainerFlex>
 
