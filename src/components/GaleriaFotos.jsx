@@ -139,6 +139,7 @@ const GaleriaFotos = () => {
             ))}
           </Masonry>
         </ResponsiveMasonry>
+
       </Container>
     </>
   );

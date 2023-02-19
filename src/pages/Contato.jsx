@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import emailjs from '@emailjs/browser';
 
 const Container = styled.section`
   margin: 0 auto;
@@ -110,9 +111,40 @@ const Contato = () => {
     }
   }
 
+  function sendEmail(event) {
+    event.preventDefault();
+    if (nome === '' || email === '' || mensagem === '') {
+      alert('Preencha todos os campos');
+    }
+
+    const templateParams = {
+      from_name: nome,
+      message: mensagem,
+      email: email,
+    };
+    emailjs
+      .send(
+        'service_website',
+        'template_website',
+        templateParams,
+        '3NIv0ayDnX-sQzRbI',
+      )
+      .then(
+        (resp) => {
+          console.log('email enviado', resp.status, resp.text);
+          setNome('');
+          setEmail('');
+          setMensagem('');
+        },
+        (err) => {
+          console.log('ERRO', err);
+        },
+      );
+  }
+
   return (
     <Container className="paginas">
-      <Form onSubmit={(event) => event.preventDefault()}>
+      <Form onSubmit={sendEmail}>
         <h1>Entre em contato conosco</h1>
         <label htmlFor="nome">Nome</label>
         <input
@@ -142,7 +174,7 @@ const Contato = () => {
           onChange={({ target }) => setMensagem(target.value)}
         />
         {msgErr && <p>insira uma mensagem</p>}
-        <button onClick={validate}>Enviar</button>
+        <button type="submit">Enviar</button>
       </Form>
       <Mapa
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7777.402438063098!2d-38.5051637!3d-12.9269149!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7160f8aad4d64b7%3A0x5979ad4612615141!2sLar%20Frei%20Lucas%20de%20Mor%C3%A1es!5e0!3m2!1spt-BR!2sbr!4v1676651134887!5m2!1spt-BR!2sbr"

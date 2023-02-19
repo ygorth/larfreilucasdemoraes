@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@glidejs/glide": "^3.6.0",
     "@react-google-maps/api": "^2.18.1",
     "embla-carousel-auto-height": "^7.0.9",
