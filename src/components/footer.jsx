@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import '../styles/geral.css';
 import telefone from '../assets/telefone.svg';
 import email from '../assets/email.svg';
-import localmapa from '../assets/localmapa.png';
+import localmapa from '../assets/mapa.jpg';
 import local from '../assets/local.svg';
 import aspas from '../assets/aspas.svg';
 import face from '../assets/face.svg';
@@ -66,7 +66,7 @@ const Redes = styled.img`
     animation: redes 1s infinite;
   }
 `;
-const Mapa = styled.iframe`
+const Mapa = styled.img`
   max-width: 220px;
   max-height:150px;
   border-radius: 8px;
@@ -134,7 +134,8 @@ export const Footer = () => {
       <div>
      
         {/* <Google/> */}
-        <Mapa src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7777.402438063098!2d-38.5051637!3d-12.9269149!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7160f8aad4d64b7%3A0x5979ad4612615141!2sLar%20Frei%20Lucas%20de%20Mor%C3%A1es!5e0!3m2!1spt-BR!2sbr!4v1676651134887!5m2!1spt-BR!2sbr" referrerPolicy="no-referrer-when-downgrade"  loading="lazy"></Mapa>
+        <a href="https://www.google.com/maps/place/Lar+Frei+Lucas+de+Mor%C3%A1es/@-12.926047,-38.506022,14z/data=!4m6!3m5!1s0x7160f8aad4d64b7:0x5979ad4612615141!8m2!3d-12.9260467!4d-38.5060223!16s%2Fg%2F11f1wfzxtr?hl=pt-BR" target="_blank"rel="noreferrer" > <Mapa src={localmapa}/></a>
+     
       </div>
       </ContainerFlex>
 

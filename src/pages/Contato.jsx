@@ -71,8 +71,14 @@ const Form = styled.form`
     &:hover {
       border-radius: 20px;
     }
+ 
   }
 `;
+const Msg = styled.p`
+transition:0.5s;
+margin-top: 10px;
+text-align:center;
+`
 const Mapa = styled.iframe`
   height: 400px;
   width: 1000px;
@@ -89,34 +95,20 @@ const Contato = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [mensagem, setMensagem] = useState('');
-  const [emailErr, setEmailErr] = useState(false);
-  const [nomeErr, setNomeErr] = useState(false);
-  const [msgErr, setMsgErr] = useState(false);
+  const [emailEnv, setEmailEnv] = useState(false);
 
-  function validate() {
-    if (!validarEmail.test(email)) {
-      setEmailErr(true);
-    } else {
-      setEmailErr(false);
-    }
-    if (nome === '') {
-      setNomeErr(true);
-    } else {
-      setNomeErr(false);
-    }
-    if (mensagem === '') {
-      setMsgErr(true);
-    } else {
-      setMsgErr(false);
-    }
-  }
+
+
 
   function sendEmail(event) {
     event.preventDefault();
-    if (nome === '' || email === '' || mensagem === '') {
+    if (nome === '' || mensagem === '') {
       alert('Preencha todos os campos');
     }
-
+    else if(!validarEmail.test(email)){
+      alert('Preencha um email valido')
+    }
+    else{
     const templateParams = {
       from_name: nome,
       message: mensagem,
@@ -140,7 +132,17 @@ const Contato = () => {
           console.log('ERRO', err);
         },
       );
+        setEmailEnv(true)
+    }
   }
+
+  setTimeout(()=>{
+    if(emailEnv){
+      setEmailEnv(false)
+    }
+  },2000)
+
+
 
   return (
     <Container className="paginas">
@@ -153,8 +155,9 @@ const Contato = () => {
           id="nome"
           placeholder="Digite seu nome"
           onChange={({ target }) => setNome(target.value)}
+          value={nome}
         />
-        {nomeErr && <p>insira um nome</p>}
+        
         <label htmlFor="email">Email</label>
         <input
           type="text"
@@ -162,8 +165,9 @@ const Contato = () => {
           id="email"
           placeholder="Digite seu email"
           onChange={({ target }) => setEmail(target.value)}
+          value={email}
         />{' '}
-        {emailErr && <p>insira um email valido</p>}
+        
         <label htmlFor="msg">Mensagem</label>
         <textarea
           id="msg"
@@ -172,8 +176,9 @@ const Contato = () => {
           rows="10"
           placeholder="digite sua mensagem"
           onChange={({ target }) => setMensagem(target.value)}
+          value={mensagem}
         />
-        {msgErr && <p>insira uma mensagem</p>}
+        {emailEnv &&  <Msg>Email Enviado!</Msg>}
         <button type="submit">Enviar</button>
       </Form>
       <Mapa
