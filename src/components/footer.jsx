@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import '../styles/geral.css';
 import telefone from '../assets/telefone.svg';
 import email from '../assets/email.svg';
-import localmapa from '../assets/mapa.jpg';
+import localmapa from '../assets/mapa.png';
 import local from '../assets/local.svg';
 import aspas from '../assets/aspas.svg';
 import face from '../assets/face.svg';
