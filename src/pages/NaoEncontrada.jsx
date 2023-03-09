@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const NaoEncontrada = () => {
-  return (
-    <div>NaoEncontrada</div>
-  )
-}
+  return <div>NaoEncontrada</div>;
+};
 
-export default NaoEncontrada
+export default NaoEncontrada;
