@@ -30,6 +30,7 @@ const Title = styled.h2`
   color: #253d4a;
   margin: 0 auto;
   padding: 0px 20px;
+  margin-top: 20px;
 `;
 const Materia = styled.h3`
   text-align: center;

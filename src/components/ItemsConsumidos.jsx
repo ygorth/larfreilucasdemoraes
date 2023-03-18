@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Items = styled.div`
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   justify-self: center;
   place-content: center;
   max-width: 1200px;
@@ -86,9 +86,9 @@ const ItemsConsumidos = () => {
             fraudas descartáveis<br></br> por dia
           </Insumos>
         </div>
-        <p>*Valores aproximados</p>
+      
       </Items>
-     
+      <p>*Valores aproximados</p>
     </Container>
   );
 };
