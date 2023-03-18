@@ -95,7 +95,7 @@ const Nav = () => {
     }
   }
 
-  console.log(mobile);
+
 
   return (
     <>

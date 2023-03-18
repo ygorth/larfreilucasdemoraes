@@ -86,7 +86,9 @@ const ItemsConsumidos = () => {
             fraudas descartáveis<br></br> por dia
           </Insumos>
         </div>
+        <p>*Valores aproximados</p>
       </Items>
+     
     </Container>
   );
 };
