@@ -15,15 +15,7 @@ import img9 from '../fotos/img9.png';
 import img10 from '../fotos/img10.png';
 import img11 from '../fotos/img11.png';
 import img12 from '../fotos/img12.png';
-import styled from 'styled-components';
 
-const Images = styled.div`
-
-@media (max-width: 800px){
- 
-}
-
-`
 
 const imagens = [
   [img1, img2, img3],

@@ -33,8 +33,10 @@ const Home = styled.section`
 const Text = styled.p`
     max-width: 120ch;
     margin: 5px;
+    margin-top: 15px;
     font-weight: bold;
     text-align: start;
+    line-height: 1.4em;
 `
 const Destaque = styled.section`
   font-size: 1.2rem;
@@ -158,7 +160,9 @@ const Inicio = () => {
               parte do seu tempo de forma voluntária, os idosos precisam
               urgentemente destes atendimentos. Procure-nos!
             </Text>
-            <a className="link ">Contato</a>
+            <Link className="link " to="/contato">
+              Contato
+            </Link>
             <Text>
               Precisamos de contribuições em dinheiro, alimentos, roupas,
               produtos de higiene pessoal e de limpeza. Conheça a nossa
@@ -175,7 +179,8 @@ const Inicio = () => {
           </article>
         </Content>
         <Aspas className='resposivo-detalhe aspas-h' screen={screen} src={aspas} />
-        <ItemsConsumidos />
+        
+        {/*    a espera do frei passar os valores <ItemsConsumidos /> */}
         <Videos />
       </Home>
     </>
