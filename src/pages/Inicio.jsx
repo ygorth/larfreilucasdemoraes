@@ -7,7 +7,6 @@ import ItemsConsumidos from '../components/ItemsConsumidos';
 import Doe from '../components/Doe';
 
 const Home = styled.section`
-  position: relative;
   display: grid;
   max-width: 100%;
   margin: 0 auto;
@@ -27,7 +26,7 @@ const Home = styled.section`
     font-size: 3rem;
   }
   @media (max-width: 500px) {
-   width: 500px;
+
   }
 `;
 
@@ -78,7 +77,6 @@ const ContentText = styled.div`
 const Content = styled.div`
   padding-bottom: 20px;
   display: flex;
-
   place-content: center;
   border-radius: 0px;
   background: #e8ebed;
@@ -93,7 +91,7 @@ const Content = styled.div`
     }
   }
   @media (max-width: 400px) {
-   max-width: 400px;
+   
 
   }
 

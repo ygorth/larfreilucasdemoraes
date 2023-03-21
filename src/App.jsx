@@ -15,11 +15,11 @@ import { Footer } from './components/footer';
 function App() {
   return (
     <>
-      {/* <Banner />
+      <Banner />
       <Slider />
-      <Nav /> */}
+      <Nav />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

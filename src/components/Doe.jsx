@@ -32,7 +32,7 @@ export const Section = styled.section`
     place-content: center;
     place-items: center;
     flex-wrap: wrap;
-    padding: 0px 40px;
+    padding: 0px 10px;
   }
   li {
     border-radius: 16px;

@@ -14,12 +14,18 @@ const Doacao = styled.section`
   background: #e8ebed;
   box-shadow: 9px 9px 18px #c5c8c9, -9px 4px 18px #ffffff;
   padding: 25px 0px;
+
   padding-bottom: 100px;
   h2 {
     font-family: 'Lobster', cursive;
     margin-bottom: 10px;
     font-size: 2rem;
   }
+
+  @media (max-width: 900px) {
+    margin: 0 5px;
+    
+}
 
 `;
 const Pix = styled.div`
@@ -50,6 +56,11 @@ const Lista = styled.ul`
   img {
     width: 20px;
   }
+  @media (max-width: 500px) {
+  
+    width: 300px;
+    padding: 15px;
+  }
 `;
 const Content = styled.div`
   display: flex;
@@ -66,6 +77,14 @@ const Content = styled.div`
   
   }
 `;
+
+const ContentItems = styled.div`
+
+  display: flex;
+  flex-direction: column;
+
+`
+
 
 const Text = styled.p`
   
@@ -92,7 +111,7 @@ const Doacoes = () => {
   return (
     <Doacao className="paginas">
       <Content>
-      <div>
+      <ContentItems>
         <h2>Depósitos em conta bancária</h2>
         <Text>
           Atualmente o Lar não tem ajuda governamental para pagar os diversos
@@ -191,7 +210,7 @@ const Doacoes = () => {
 
         <h2>Utensílios para cozinha</h2>
         <Text>Liquidificador industrial e bujão de gás 13 kgs.</Text>
-     </div>
+     </ContentItems>
       <Doe />
       </Content>
      

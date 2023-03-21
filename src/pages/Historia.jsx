@@ -14,9 +14,7 @@ const History = styled.section`
   box-shadow: 9px 9px 18px #c5c8c9, -9px 4px 18px #ffffff;
   padding: 25px 0px;
   padding-bottom: 100px;
-  @media (max-width: 700px) {
-    flex-wrap: wrap;
-  }
+
 
   h2 {
     font-family: 'Lobster', cursive;
@@ -37,10 +35,15 @@ const Content = styled.div`
   max-width: 100vw;
   border-radius: 0px;
   margin: 0 auto;
-
+  
+  place-content: center;
   strong {
     color: black;
     font-weight: bolder;
+  }
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+    margin: 0 5px;
   }
 `;
 
