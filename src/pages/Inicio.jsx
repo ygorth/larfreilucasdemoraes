@@ -57,6 +57,12 @@ const TextDestaque = styled.aside`
   flex-direction: column;
   align-items: center;
   place-items: center;
+
+  h3{
+    padding-top:10px;
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
 `;
 
 const Destaque = styled.section`
