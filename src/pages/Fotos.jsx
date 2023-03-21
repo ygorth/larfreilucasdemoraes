@@ -9,7 +9,7 @@ const Container = styled.section`
 `;
 const Fotos = () => {
   return (
-    <Container>
+    <Container className="paginas">
       <GaleriaFotos />
     </Container>
   );

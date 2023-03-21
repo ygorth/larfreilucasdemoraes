@@ -3,115 +3,112 @@ import styled from 'styled-components';
 import '../styles/geral.css';
 import { Link } from 'react-router-dom';
 import { Videos } from '../components/videos';
-import aspas from '../assets/aspas.svg';
 import ItemsConsumidos from '../components/ItemsConsumidos';
 import Doe from '../components/Doe';
 
 const Home = styled.section`
-
   position: relative;
   display: grid;
-  place-content: center;
-  max-width: 100vw;
+  max-width: 100%;
+  margin: 0 auto;
   margin-bottom: 50px;
-  color:#253D4A ;
+  color: #253d4a;
+  font-weight: bold;
+  
   h2 {
     font-family: 'Lobster', cursive;
     margin-bottom: 10px;
     font-size: 2rem;
-    text-align: center;
+    place-self: start;
   }
-
-
 
   h5 {
     font-family: 'Lobster', cursive;
     font-size: 3rem;
   }
+  @media (max-width: 500px) {
+   width: 500px;
+  }
 `;
+
 
 const Text = styled.p`
-    max-width: 120ch;
-    margin: 5px;
-    margin-top: 15px;
-    font-weight: bold;
-    text-align: start;
-    line-height: 1.4em;
-`
-const Destaque = styled.section`
-  font-size: 1.2rem;
-  font-family: 'Lobster', cursive;
+  max-width: 112ch;
+  margin: 5px;
+  margin-top: 18px;
+  font-weight: bold;
+  text-align: justify;
+  line-height: 1.4em;
+  @media (max-width: 900px) {
+    max-width: 70ch;
+  }
+`;
+const TextDestaque = styled.aside`
+  background: #a7c4d2;
+  box-shadow: 9px 9px 18px #788d97, -9px -9px 18px #d6fbff;
+  border-radius: 20px;
+  max-width: 120ch;
+  margin: 5px;
+  margin-top: 18px;
+  font-weight: bold;
+  text-align: start;
+  padding: 10px;
+  line-height: 1.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-items: center;
 `;
 
-const Content = styled.div`
-  max-width: 100vw;
-  width: 100%;
+const Destaque = styled.section`
+  margin-top: 10px;
+  display: flex;
+  place-content: center;
+  p {
+    font-size: 1.2rem;
+    font-family: 'Lobster', cursive;
+  }
+`;
+const ContentText = styled.div`
   display: grid;
-  grid-template-columns: minmax(400px, 1500px) minmax(400px, 1000px);
-  max-width: 100vw;
+  place-content: center;
+  place-items: center;
+  max-width: 100%;
+`;
+const Content = styled.div`
+  padding-bottom: 20px;
+  display: flex;
+
+  place-content: center;
   border-radius: 0px;
   background: #e8ebed;
+
   box-shadow: 9px 9px 18px #c5c8c9, -9px 4px 18px #ffffff;
-  div {
-    padding: 30px 20px 20px 50px;
-  }
 
   @media (max-width: 900px) {
-    grid-template-columns:minmax(200px, 1100px);
-   div{
-    padding: 10px;
-   }
+   
+    flex-wrap: wrap;
+    div {
+      padding: 10px;
+    }
+  }
+  @media (max-width: 400px) {
+   max-width: 400px;
+
   }
 
- 
 `;
 const Lin = styled.a`
   margin: 0px;
 `;
 
-const Aspas = styled.img`
-  position: absolute;
-  max-width: 200px;
-  top:500px;
-  right: 10px;
-  rotate: 175deg;
-  @media (max-width: 1500px) {
-      max-width: 150px;
-      top: 560px;
-  }
-  @media (max-width: 1418px) {
-      max-width: 100px;
-      top: 650px;
-  }
-  @media (max-width: 1162px) {
-      top: 750px;
-  }
-  @media (max-width: 1042px) {
-      top: 800px;
-  }
-  @media (max-width: 900px) {
-     display: none;
-  }
-`;
-
 const Inicio = () => {
-  const [screen, setScreen] = React.useState(window.innerWidth);
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setScreen(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <>
       <Home className="paginas">
         <Content className="font">
-          <div>
+          <ContentText>
+
             <h2>Sobre o Lar </h2>
             <Text>
               O Lar Frei Lucas de Moráes é uma instituição de caridade, que
@@ -125,12 +122,11 @@ const Inicio = () => {
               manutenção e subsistência.
             </Text>
             <Destaque>
-              Ajude-nos! Fome e doença não esperam... mobilize-se!
+              <p> Ajude-nos! Fome e doença não esperam... mobilize-se!</p>
             </Destaque>
             <Text>
-              Sem a sua caridade o Lar não tem como cuidar destes idosos.
-              <strong>Venha nos conhecer</strong>, dê-nos a alegria da sua
-              visita.
+              Sem a sua caridade o Lar não tem como cuidar destes idosos. Venha
+              nos conhecer, dê-nos a alegria da sua visita.
             </Text>
             <Text>
               Nosso endereço é{' '}
@@ -153,34 +149,39 @@ const Inicio = () => {
               através do seu agradecimento silencioso. Que Deus lhe retorne em
               bênçãos e prosperidade.
             </Text>
-            <h3>Área Médica</h3>
-            <Text>
-              O Lar necessita de profissionais nas áreas de geriatria, nutrição,
-              enfermagem, assistência social e fisioterapia. Quem puder dedicar
-              parte do seu tempo de forma voluntária, os idosos precisam
-              urgentemente destes atendimentos. Procure-nos!
-            </Text>
-            <Link className="link " to="/contato">
-              Contato
-            </Link>
             <Text>
               Precisamos de contribuições em dinheiro, alimentos, roupas,
               produtos de higiene pessoal e de limpeza. Conheça a nossa
               história, as nossas necessidades. Clique em Saiba Mais para
               informações sobre doações!
             </Text>
+            <Destaque>
+              <Link className="link" to="/doacoes">
+                Saiba Mais
+              </Link>
+            </Destaque>
 
-            <Link className="link " to="/doacoes">
-              Saiba Mais
-            </Link>
-          </div>
-          <article>
-            <Doe />
-          </article>
+            <TextDestaque>
+              <h3>Área Médica</h3>
+              <Text>
+                O Lar necessita de profissionais nas áreas de geriatria,
+                nutrição, enfermagem, assistência social e fisioterapia. Quem
+                puder dedicar parte do seu tempo de forma voluntária, os idosos
+                precisam urgentemente destes atendimentos. Procure-nos!
+              </Text>
+
+              <Link className="link " to="/contato">
+                Contato
+              </Link>
+            </TextDestaque>
+
+
+          </ContentText>
+
+          <Doe />
         </Content>
-        <Aspas className='resposivo-detalhe aspas-h' screen={screen} src={aspas} />
-        
-        {/*    a espera do frei passar os valores <ItemsConsumidos /> */}
+
+           {/* a espera do frei passar os valores <ItemsConsumidos /> */}
         <Videos />
       </Home>
     </>

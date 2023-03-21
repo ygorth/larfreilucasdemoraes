@@ -30,12 +30,13 @@ const Title = styled.h2`
   color: #253d4a;
   margin: 0 auto;
   padding: 0px 20px;
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 const Materia = styled.h3`
   text-align: center;
-  max-width: ${({ tamanho }) => (tamanho < 500 ? '30ch' : '50ch')};
-  font-size: 0.87rem;
+  max-width: ${({ tamanho }) => (tamanho < 500 ? '26ch' : '50ch')};
+  font-size: 1.1rem;
+  font-weight: bold;
   padding: 5px;
   transition: 0.3s;
 `;
@@ -59,7 +60,7 @@ const Materia = styled.h3`
 
 
 export const Videos = () => {
-  const [videos, setVideos] = useState([240, 240, 240, 240]);
+  const [videos, setVideos] = useState([250, 250, 250, 250]);
   
 
 
@@ -67,9 +68,9 @@ export const Videos = () => {
     const screenWidth = window.innerWidth;
     const newVideos = videos.map((video, i) => {
       if (i === index) {
-        return video === 240 ? (screenWidth < 700 ? 320 : (screenWidth < 1200 ? 400 : 600)) : 240;
+        return video === 250 ? (screenWidth < 700 ? 320 : (screenWidth < 1200 ? 400 : 600)) : 250;
       }
-      return video === 600 || video === 400 || video === 300 ? 240 : video;
+      return video === 600 || video === 400 || video === 300 ? 250 : video;
     });
   
     setVideos(newVideos);
@@ -103,7 +104,8 @@ export const Videos = () => {
           },
         ].map((video, index) => (
           <div key={video.id} >
-            <Video1 src={video.src} tamanho={videos[index]} />
+           
+            <Video1 src={video.src} tamanho={videos[index]}  />
             <Materia tamanho={videos[index]}>{video.title}</Materia>
             <button className="link" onClick={() => handleVideo(index)}>
               {videos[index] < 500 ? 'Zoom +' : 'Zoom -'}

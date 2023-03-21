@@ -69,6 +69,21 @@ const images = [
   img20,
 ];
 
+
+const images2 = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+];
+
 const GaleriaFotos = () => {
   const [data, setData] = useState({ img: '', i: 0 });
 
@@ -129,8 +144,22 @@ const GaleriaFotos = () => {
       )}
       <Container>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+          <h2>2018</h2>
           <Masonry gutter="20px">
+            
             {images.map((image, i) => (
+              <img
+                key={image}
+                src={image}
+                onClick={() => viewImage(image, i)}
+              />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+        <h2>2018</h2>
+          <Masonry gutter="20px">
+            {images2.map((image, i) => (
               <img
                 key={image}
                 src={image}

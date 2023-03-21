@@ -18,10 +18,11 @@ const Container = styled.section`
 const Form = styled.form`
   font-family: 'Roboto', sans-serif, Arial, Helvetica;
   font-weight: bold;
+  border-radius: 16px;
   background: #a7c4d2;
+  box-shadow: 9px 9px 18px #788d97, -9px -9px 18px #d6fbff;
   color: #253d4a;
   padding: 40px 25px;
-  border-radius: 15px;
   margin: 0 auto;
   place-content: center;
   display: flex;
@@ -29,7 +30,10 @@ const Form = styled.form`
   flex: 1;
   width: 1000px;
   max-width: 100%;
+
   h1 {
+    font-size: 2rem;
+    font-family: 'Lobster', cursive;
     text-align: center;
     margin-bottom: 10px;
   }
@@ -37,12 +41,14 @@ const Form = styled.form`
     font-size: 1.2rem;
   }
   input {
+    font-weight: bold;
     border: 0px;
     height: 50px;
     font-size: 1.2rem;
     padding: 10px;
     transition: 0.4s;
     outline: none;
+    margin-bottom: 20px;
     &:focus {
       border-radius: 15px;
     }
@@ -53,32 +59,37 @@ const Form = styled.form`
     outline: none;
     padding: 10px;
     font-size: 1.2rem;
+    font-weight: bold;
     &:focus {
       border-radius: 15px;
     }
   }
   button {
     margin-top: 20px;
-    cursor: pointer;
     transition: 0.4s;
-    border: 0px;
     border-radius: 10px;
     height: 40px;
     font-size: 1.3rem;
+    font-weight: bold;
     width: 150px;
     align-self: center;
+    background: #253d4a;
+    padding: 5px 15px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #a7c4d2;
 
     &:hover {
       border-radius: 20px;
     }
- 
   }
 `;
 const Msg = styled.p`
-transition:0.5s;
-margin-top: 10px;
-text-align:center;
-`
+  transition: 0.5s;
+  margin-top: 10px;
+  text-align: center;
+`;
 const Mapa = styled.iframe`
   height: 400px;
   width: 1000px;
@@ -97,52 +108,47 @@ const Contato = () => {
   const [mensagem, setMensagem] = useState('');
   const [emailEnv, setEmailEnv] = useState(false);
 
-//test
-
+  //test
 
   function sendEmail(event) {
     event.preventDefault();
     if (nome === '' || mensagem === '') {
       alert('Preencha todos os campos');
-    }
-    else if(!validarEmail.test(email)){
-      alert('Preencha um email valido')
-    }
-    else{
-    const templateParams = {
-      from_name: nome,
-      message: mensagem,
-      email: email,
-    };
-    emailjs
-      .send(
-        'service_website',
-        'template_website',
-        templateParams,
-        '3NIv0ayDnX-sQzRbI',
-      )
-      .then(
-        (resp) => {
-          console.log('email enviado', resp.status, resp.text);
-          setNome('');
-          setEmail('');
-          setMensagem('');
-        },
-        (err) => {
-          console.log('ERRO', err);
-        },
-      );
-        setEmailEnv(true)
+    } else if (!validarEmail.test(email)) {
+      alert('Preencha um email valido');
+    } else {
+      const templateParams = {
+        from_name: nome,
+        message: mensagem,
+        email: email,
+      };
+      emailjs
+        .send(
+          'service_website',
+          'template_website',
+          templateParams,
+          '3NIv0ayDnX-sQzRbI',
+        )
+        .then(
+          (resp) => {
+            console.log('email enviado', resp.status, resp.text);
+            setNome('');
+            setEmail('');
+            setMensagem('');
+          },
+          (err) => {
+            console.log('ERRO', err);
+          },
+        );
+      setEmailEnv(true);
     }
   }
 
-  setTimeout(()=>{
-    if(emailEnv){
-      setEmailEnv(false)
+  setTimeout(() => {
+    if (emailEnv) {
+      setEmailEnv(false);
     }
-  },2000)
-
-
+  }, 2000);
 
   return (
     <Container className="paginas">
@@ -157,7 +163,6 @@ const Contato = () => {
           onChange={({ target }) => setNome(target.value)}
           value={nome}
         />
-        
         <label htmlFor="email">Email</label>
         <input
           type="text"
@@ -167,7 +172,6 @@ const Contato = () => {
           onChange={({ target }) => setEmail(target.value)}
           value={email}
         />{' '}
-        
         <label htmlFor="msg">Mensagem</label>
         <textarea
           id="msg"
@@ -178,7 +182,7 @@ const Contato = () => {
           onChange={({ target }) => setMensagem(target.value)}
           value={mensagem}
         />
-        {emailEnv &&  <Msg>Email Enviado!</Msg>}
+        {emailEnv && <Msg>Email Enviado!</Msg>}
         <button type="submit">Enviar</button>
       </Form>
       <Mapa
