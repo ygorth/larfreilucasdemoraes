@@ -8,12 +8,13 @@ import Doe from '../components/Doe';
 
 const Home = styled.section`
   display: grid;
+  place-content: center;
   max-width: 100%;
   margin: 0 auto;
   margin-bottom: 50px;
   color: #253d4a;
   font-weight: bold;
-  
+
   h2 {
     font-family: 'Lobster', cursive;
     margin-bottom: 10px;
@@ -26,10 +27,8 @@ const Home = styled.section`
     font-size: 3rem;
   }
   @media (max-width: 500px) {
-
   }
 `;
-
 
 const Text = styled.p`
   max-width: 112ch;
@@ -58,8 +57,8 @@ const TextDestaque = styled.aside`
   align-items: center;
   place-items: center;
 
-  h3{
-    padding-top:10px;
+  h3 {
+    padding-top: 10px;
     font-size: 1.5rem;
     white-space: nowrap;
   }
@@ -79,10 +78,14 @@ const ContentText = styled.div`
   place-content: center;
   place-items: center;
   max-width: 100%;
+  margin: 0 15px;
 `;
 const Content = styled.div`
+  width: 99vw;
+  max-width: 100%;
   padding-bottom: 20px;
   display: flex;
+  gap: 50px;
   place-content: center;
   border-radius: 0px;
   background: #e8ebed;
@@ -90,17 +93,14 @@ const Content = styled.div`
   box-shadow: 9px 9px 18px #c5c8c9, -9px 4px 18px #ffffff;
 
   @media (max-width: 900px) {
-   
+    gap: 20px;
     flex-wrap: wrap;
     div {
       padding: 10px;
     }
   }
   @media (max-width: 400px) {
-   
-
   }
-
 `;
 const Lin = styled.a`
   margin: 0px;
@@ -112,7 +112,6 @@ const Inicio = () => {
       <Home className="paginas">
         <Content className="font">
           <ContentText>
-
             <h2>Sobre o Lar </h2>
             <Text>
               O Lar Frei Lucas de Moráes é uma instituição de caridade, que
@@ -178,14 +177,12 @@ const Inicio = () => {
                 Contato
               </Link>
             </TextDestaque>
-
-
           </ContentText>
 
           <Doe />
         </Content>
 
-           {/* a espera do frei passar os valores <ItemsConsumidos /> */}
+        {/* a espera do frei passar os valores <ItemsConsumidos /> */}
         <Videos />
       </Home>
     </>

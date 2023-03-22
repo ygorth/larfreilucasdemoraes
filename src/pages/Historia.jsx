@@ -15,7 +15,6 @@ const History = styled.section`
   padding: 25px 0px;
   padding-bottom: 100px;
 
-
   h2 {
     font-family: 'Lobster', cursive;
     margin-bottom: 10px;
@@ -35,7 +34,7 @@ const Content = styled.div`
   max-width: 100vw;
   border-radius: 0px;
   margin: 0 auto;
-  
+  gap: 50px;
   place-content: center;
   strong {
     color: black;
@@ -47,6 +46,9 @@ const Content = styled.div`
   }
 `;
 
+const ContentText = styled.div`
+  margin: 0 15px;
+`;
 const Text = styled.p`
   font-weight: bold;
   max-width: 112ch;
@@ -60,7 +62,7 @@ const Historia = () => {
   return (
     <History className="paginas">
       <Content className="font">
-        <div>
+        <ContentText>
           <h2>Quem foi Frei Lucas de Moráes</h2>
           <Text>
             O nome da Instituição é uma homenagem ao{' '}
@@ -270,7 +272,7 @@ const Historia = () => {
               <em>Frei Florisvaldo Santos Silva</em>
             </strong>
           </Text>
-        </div>
+        </ContentText>
         <Doe />
       </Content>
     </History>
