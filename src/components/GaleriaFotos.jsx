@@ -46,6 +46,7 @@ const ContainerDiv = styled.div`
 `
 const Content = styled.div`
   height: 800px ;
+ background: rgba(0, 0, 0, 0.6);
 `
 // rgba(0, 0, 0, 0.6)
 
