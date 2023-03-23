@@ -34,7 +34,7 @@ const Container = styled.div`
   margin:  0 auto;
   width: 80vw;
   padding: 50px 30px;
-
+ 
   img {
     width: 100%;
     display: block;
@@ -46,7 +46,6 @@ const ContainerDiv = styled.div`
 `
 const Content = styled.div`
   height: 800px ;
- background: rgba(0, 0, 0, 0.6);
 `
 // rgba(0, 0, 0, 0.6)
 
