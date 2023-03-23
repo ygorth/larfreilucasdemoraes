@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import '../styles/geral.css';
 import '../styles/galeriafotos.css';
@@ -41,8 +41,12 @@ const Container = styled.div`
     cursor: pointer;
   }
 `;
+const ContainerDiv = styled.div`
 
-
+`
+const Content = styled.div`
+  height: 800px ;
+`
 // rgba(0, 0, 0, 0.6)
 
 
@@ -77,19 +81,24 @@ const images2 = [
   img4,
   img5,
   img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
+
+
 ];
 
 const GaleriaFotos = () => {
   const [data, setData] = useState({ img: '', i: 0 });
-
+  const [view, setView] = useState(false);
   function viewImage(img, i) {
+
     setData({ img, i });
   }
+
+  useEffect(()=>{
+    if(data.img == ''){
+      setView(true)
+      console.log(view);
+    }
+  },[data])
 
   function imgAction(action) {
     let i = data.i;
@@ -142,22 +151,12 @@ const GaleriaFotos = () => {
           </div>
         </div>
       )}
+    
       <Container>
+      <h2>2018</h2>
+      {data.img && <Content></Content>}
+      {!data.img &&  <ContainerDiv>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-          <h2>2018</h2>
-          <Masonry gutter="20px">
-            
-            {images.map((image, i) => (
-              <img
-                key={image}
-                src={image}
-                onClick={() => viewImage(image, i)}
-              />
-            ))}
-          </Masonry>
-        </ResponsiveMasonry>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-        <h2>2018</h2>
           <Masonry gutter="20px">
             {images2.map((image, i) => (
               <img
@@ -168,7 +167,22 @@ const GaleriaFotos = () => {
             ))}
           </Masonry>
         </ResponsiveMasonry>
-
+        </ContainerDiv>}
+        {!data.img &&  <ContainerDiv>
+        <h2>2018</h2>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+          <Masonry gutter="20px">
+            {images2.map((image, i) => (
+              <img
+                key={image}
+                src={image}
+                onClick={() => viewImage(image, i)}
+              />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+        </ContainerDiv>}
+       
       </Container>
     </>
   );
