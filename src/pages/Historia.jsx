@@ -39,6 +39,7 @@ const Content = styled.div`
   strong {
     color: black;
     font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
   }
   @media (max-width: 700px) {
     flex-wrap: wrap;
@@ -57,6 +58,19 @@ const Text = styled.p`
   text-align: justify;
   line-height: 1.5em;
 `;
+const Lista = styled.ul`
+margin-bottom: 10px;
+li{
+  margin-top: 10px;
+}
+
+strong{
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+`
+
 
 const Historia = () => {
   return (
@@ -184,7 +198,7 @@ const Historia = () => {
             internas necessárias, para gerar recursos que sejam satisfatórios
             para realizar as seguintes necessidades da instituição:
           </Text>
-          <ul>
+          <Lista>
             <li>
               <strong>A</strong>. Contratação de profissionais nas áreas de
               geriatria, nutrição, enfermagem, assistência social e
@@ -220,7 +234,7 @@ const Historia = () => {
             <li>
               <strong>J</strong>. Manutenção e melhorias do local.
             </li>
-          </ul>
+          </Lista>
           <h2>Os Princípios</h2>
           <Text>
             A Instituição tem como determinação o respeito aos idosos, o
