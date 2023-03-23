@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import '../styles/geral.css';
 import pix from '../assets/pix.svg';
+import Paypal from './Paypal';
 
 export const Section = styled.section`
   padding: 10px;

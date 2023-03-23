@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import icon from '../assets/iconelista.svg';
 import pix from '../assets/pix.svg';
 import Doe from '../components/Doe';
+import Paypal from '../components/Paypal';
 
 const Doacao = styled.section`
   color: #253d4a;
