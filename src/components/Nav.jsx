@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import menu from '../assets/mobile.svg';
@@ -46,7 +46,7 @@ const Nave = styled.div`
 
   @media (max-width: 1038px) {
     padding: 5px 10px;
-    display: ${({ mobile }) => (mobile ? 'none' : 'block')};
+    display: ${({ mobile }) => mobile ? 'none' : 'block'};
     opacity: 1;
     animation: animar22 0.3s ease ;
 
@@ -56,6 +56,14 @@ const Nave = styled.div`
       flex: 1;
       gap: 0px;
     }
+  }
+
+  @media (max-width: 500px) {
+  
+    display: ${({ mobile }) => mobile ? 'none' : 'block'};
+  
+
+   
   }
 `;
 
@@ -86,20 +94,36 @@ const Botao = styled.button`
 
 const Nav = () => {
   const [mobile, setMobile] = useState(1);
+  const [screen, setScreen] = useState(window.innerWidth);
 
-  function abrirFechar() {
+  function handleClick() {
     if (mobile === 1) {
       setMobile(0);
     } else {
       setMobile(1);
     }
   }
+  
 
+  useEffect(() => {
+    const handleResize = () => {
+      setScreen(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
+  useEffect(() => {
+  if(screen < 500){
+    setMobile(0)
+  }
+  },[screen])
 
   return (
     <>
-      <Nave mobile={mobile}>
+      <Nave mobile={mobile} >
         <ul>
           <li>
             <Link to="/">Início</Link>
@@ -118,7 +142,7 @@ const Nav = () => {
           </li>
         </ul>
       </Nave>
-      <Botao className="menu-mobile" onClick={abrirFechar}>
+      <Botao className="menu-mobile" onClick={handleClick} >
         <img src={mobile ? menu : fechar} />
       </Botao>
     </>

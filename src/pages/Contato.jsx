@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 
@@ -108,7 +108,11 @@ const Contato = () => {
   const [mensagem, setMensagem] = useState('');
   const [emailEnv, setEmailEnv] = useState(false);
 
-  //test
+
+  useEffect(()=>{
+    window.scrollTo({top:0, left:0})
+  },[])
+
 
   function sendEmail(event) {
     event.preventDefault();

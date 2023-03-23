@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import icon from '../assets/iconelista.svg';
 import pix from '../assets/pix.svg';
@@ -100,6 +100,11 @@ const Info = styled.div`
 `;
 
 const Doacoes = () => {
+  useEffect(()=>{
+    window.scrollTo({top:0, left:0})
+  },[])
+
+
   return (
     <Doacao className="paginas">
       <Content>

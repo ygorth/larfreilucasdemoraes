@@ -173,7 +173,7 @@ const Inicio = () => {
                 precisam urgentemente destes atendimentos. Procure-nos!
               </Text>
 
-              <Link className="link " to="/contato">
+              <Link className="link " to="/contato" >
                 Contato
               </Link>
             </TextDestaque>
