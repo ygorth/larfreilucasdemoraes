@@ -1,0 +1,36 @@
+{
+  "2012": [
+    {"id": 1, "url": "../fotosGaleria/2012/20.jpg"},
+    {"id": 2, "url": "../fotosGaleria/2012/30.jpg"},
+    {"id": 3, "url": "../fotosGaleria/2012/33.jpg"},
+    {"id": 4, "url": "../fotosGaleria/2012/35.jpg"},
+    {"id": 5, "url": "../fotosGaleria/2012/40.jpg"},
+    {"id": 6, "url": "../fotosGaleria/2012/45.jpg"},
+    {"id": 7, "url": "../fotosGaleria/2012/50.jpg"}
+  ],
+  "2015": [
+    {"id": 1, "url": "../fotosGaleria/2015/1.jpg"},
+    {"id": 2, "url": "../fotosGaleria/2015/2.jpg"},
+    {"id": 3, "url": "../fotosGaleria/2015/3.jpg"},
+    {"id": 4, "url": "../fotosGaleria/2015/4.jpg"},
+    {"id": 5, "url": "../fotosGaleria/2015/5.jpg"},
+    {"id": 6, "url": "../fotosGaleria/2015/6.jpg"},
+    {"id": 7, "url": "../fotosGaleria/2015/7.jpg"},
+    {"id": 8, "url": "../fotosGaleria/2015/8.jpg"},
+    {"id": 9, "url": "../fotosGaleria/2015/9.jpg"},
+    {"id": 10, "url": "../fotosGaleria/2015/10.jpg"},
+    {"id": 11, "url": "../fotosGaleria/2015/11.jpg"}
+  ],
+  "2018": [
+    {"id": 1, "url": "../fotosGaleria/2018/1.jpg"},
+    {"id": 2, "url": "../fotosGaleria/2018/2.jpg"},
+    {"id": 3, "url": "../fotosGaleria/2018/3.jpg"},
+    {"id": 4, "url": "../fotosGaleria/2018/4.jpg"},
+    {"id": 5, "url": "../fotosGaleria/2018/5.jpg"},
+    {"id": 6, "url": "../fotosGaleria/2018/6.jpg"},
+    {"id": 7, "url": "../fotosGaleria/2018/7.jpg"},
+    {"id": 8, "url": "../fotosGaleria/2018/8.jpg"},
+    {"id": 9, "url": "../fotosGaleria/2018/9.jpg"},
+    {"id": 10, "url": "../fotosGaleria/2018/10.jpg"}
+  ]
+}

@@ -3,18 +3,18 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import seta from '../assets/seta.svg';
 import '../styles/slide.css';
-import img1 from '../fotos/img1e1.png';
-import img2 from '../fotos/img2e2.png';
-import img3 from '../fotos/img3e3.png';
-import img4 from '../fotos/img4e4.png';
-import img5 from '../fotos/img5e5.png';
-import img6 from '../fotos/img6e6.png';
-import img7 from '../fotos/img7.png';
-import img8 from '../fotos/img8.png';
-import img9 from '../fotos/img9.png';
-import img10 from '../fotos/img10.png';
-import img11 from '../fotos/img11.png';
-import img12 from '../fotos/img12.png';
+import img1 from '../fotosGaleria/2021/33.jpeg';
+import img2 from '../fotosGaleria/2021/30.jpeg';
+import img3 from '../fotosGaleria/2021/31.jpeg';
+import img4 from '../fotosGaleria/2021/29.jpeg';
+import img5 from '../fotosGaleria/2021/28.jpeg';
+import img6 from '../fotosGaleria/2021/27.jpeg';
+import img7 from '../fotosGaleria/2021/26.jpeg';
+import img8 from '../fotosGaleria/2021/25.jpeg';
+import img9 from '../fotosGaleria/2021/24.jpeg';
+import img10 from '../fotosGaleria/2021/23.jpeg';
+import img11 from '../fotosGaleria/2021/21.jpeg';
+import img12 from '../fotosGaleria/2021/20.jpeg';
 
 
 const imagens = [
