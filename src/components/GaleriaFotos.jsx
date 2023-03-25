@@ -17,7 +17,7 @@ import {
 const Container = styled.div`
   margin: 0 auto;
   width: 80vw;
-  padding: ${({ data }) => (!data ? '50px' : '0px')} 30px;
+  padding: ${({ pad }) => (!pad ? '50px' : '0px')} 30px;
 
   img {
     width: 100%;
@@ -50,17 +50,17 @@ const ContainerDiv = styled.div``;
 
 const GaleriaFotos = () => {
   const [data, setData] = useState({ img: '', i: 0 });
-  const [galery, setGalery] = useState(images_2012);
+  const [galery, setGalery] = useState([]);
   const [pad, setPad] = useState(false);
 
-  function viewImage(img, i, imgAno) {
+  const viewImage = (img, i, imgAno) => {
     setData({ img, i });
     setGalery(imgAno);
-    window.scrollTo({top:430, left:0})
+    window.scrollTo({top: 430, left: 0});
     setPad(true);
-  }
+  };
 
-  function imgAction(action) {
+  const imgAction = (action) => {
     let i = data.i;
 
     if (action === 'next-img') {
@@ -73,124 +73,60 @@ const GaleriaFotos = () => {
       setData({ img: '', i: 0 });
       setPad(false);
     }
-  }
+  };
+
+  const renderImages = (images, year) => (
+    <ContainerDiv>
+      <h2>{year}</h2>
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+        <Masonry gutter="20px">
+          {images.map((image, i) => (
+            <div key={image}>
+              <img src={image} onClick={() => viewImage(image, i, images)} />
+            </div>
+          ))}
+        </Masonry>
+      </ResponsiveMasonry>
+    </ContainerDiv>
+  );
 
   return (
     <>
       {data.img && (
         <div className="responsivo-galeria">
-          <button
-            className="btns-galeria"
-            onClick={() => imgAction('prev-img')}
-          >
+          <button className="btns-galeria" onClick={() => imgAction('prev-img')}>
             <img className="seta-galeria " src={seta} alt="icon seta" />
           </button>
           <img className="img-galeria" src={data.img} />
           <button className="fechar-galeria" onClick={() => imgAction('')}>
             <img src={fechar} alt="icon fechar" />
           </button>
-
-          <button
-            className="btns-galeria "
-            onClick={() => imgAction('next-img')}
-          >
+          <button className="btns-galeria " onClick={() => imgAction('next-img')}>
             <img src={seta} alt="icon seta" />
           </button>
           <div className="mobile-setas">
-            <button
-              className="btns-mobile-galeria"
-              onClick={() => imgAction('prev-img')}
-            >
+            <button className="btns-mobile-galeria" onClick={() => imgAction('prev-img')}>
               <img src={seta2} alt="icon seta" />
             </button>
-            <button
-              className="btns-mobile-galeria"
-              onClick={() => imgAction('next-img')}
-            >
+            <button className="btns-mobile-galeria" onClick={() => imgAction('next-img')}>
               <img src={setarigth} alt="icon seta" />
             </button>
           </div>
         </div>
       )}
-
-      <Container data={pad}>
-        {!data.img && (
-          <ContainerDiv>
-            <h2>2021</h2>
-            <ResponsiveMasonry
-              columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-            >
-              <Masonry gutter="20px" >
-                {images_2021.map((image, i) => (
-                  <img
-                    key={image}
-                    src={image}
-                    onClick={() => viewImage(image, i, images_2021)}
-                  />
-                ))}
-              </Masonry>
-            </ResponsiveMasonry>
-          </ContainerDiv>
-        )}
-        {!data.img && (
-          <ContainerDiv>
-            <h2>2018</h2>
-            <ResponsiveMasonry
-              columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-            >
-              <Masonry gutter="20px">
-                {images_2018.map((image, i) => (
-                  <img
-                    key={image}
-                    src={image}
-                    onClick={() => viewImage(image, i, images_2018)}
-                  />
-                ))}
-              </Masonry>
-            </ResponsiveMasonry>
-          </ContainerDiv>
-        )}
-        {!data.img && (
-          <ContainerDiv>
-            <h2>2015</h2>
-            <ResponsiveMasonry
-              columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-            >
-              <Masonry gutter="20px">
-                {images_2015.map((image, i) => (
-                  <div key={image}>
-                    <img
-                      src={image}
-                      onClick={() => viewImage(image, i, images_2015)}
-                    />
-                  </div>
-                ))}
-              </Masonry>
-            </ResponsiveMasonry>
-          </ContainerDiv>
-        )}
-        {!data.img && (
-          <ContainerDiv>
-            <h2>2012</h2>
-            <ResponsiveMasonry
-              columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-            >
-              <Masonry gutter="20px">
-                {images_2012.map((image, i) => (
-                  <div key={image}>
-                    <img
-                      src={image}
-                      onClick={() => viewImage(image, i, images_2012)}
-                    />
-                  </div>
-                ))}
-              </Masonry>
-            </ResponsiveMasonry>
-          </ContainerDiv>
-        )}
+      <Container pad={pad}>
+        {!data.img && renderImages(images_2021, '2021')}
+        {!data.img && renderImages(images_2018, '2018')}
+        {!data.img && renderImages(images_2015, '2015')}
+        {!data.img && renderImages(images_2012, '2012')}
       </Container>
     </>
   );
 };
+
+
+
+
+
 
 export default GaleriaFotos;
