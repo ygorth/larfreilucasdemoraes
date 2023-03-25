@@ -39,9 +39,8 @@ const Container = styled.div`
   }
 
   @media (max-width: 540px) {
-    padding: ${({ data }) => (!data ? '50px' : '0px')} 10px;
+  
     h2 {
-      
       font-size: 1.6rem;
     }
   }
@@ -52,11 +51,30 @@ const GaleriaFotos = () => {
   const [data, setData] = useState({ img: '', i: 0 });
   const [galery, setGalery] = useState([]);
   const [pad, setPad] = useState(false);
+  const [screen, setScreen] = useState(window.innerWidth);
+  const [valueScroll, setValueScroll] = useState(430)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreen(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(()=>{
+    if(screen < 500){
+      setValueScroll(250)
+    }
+  },[screen])
+
 
   const viewImage = (img, i, imgAno) => {
     setData({ img, i });
     setGalery(imgAno);
-    window.scrollTo({top: 430, left: 0});
+    window.scrollTo({ top: valueScroll, left: 0 });
     setPad(true);
   };
 
@@ -94,27 +112,39 @@ const GaleriaFotos = () => {
     <>
       {data.img && (
         <div className="responsivo-galeria">
-          <button className="btns-galeria" onClick={() => imgAction('prev-img')}>
+          <button
+            className="btns-galeria"
+            onClick={() => imgAction('prev-img')}
+          >
             <img className="seta-galeria " src={seta} alt="icon seta" />
           </button>
           <img className="img-galeria" src={data.img} />
           <button className="fechar-galeria" onClick={() => imgAction('')}>
             <img src={fechar} alt="icon fechar" />
           </button>
-          <button className="btns-galeria " onClick={() => imgAction('next-img')}>
+          <button
+            className="btns-galeria "
+            onClick={() => imgAction('next-img')}
+          >
             <img src={seta} alt="icon seta" />
           </button>
           <div className="mobile-setas">
-            <button className="btns-mobile-galeria" onClick={() => imgAction('prev-img')}>
+            <button
+              className="btns-mobile-galeria"
+              onClick={() => imgAction('prev-img')}
+            >
               <img src={seta2} alt="icon seta" />
             </button>
-            <button className="btns-mobile-galeria" onClick={() => imgAction('next-img')}>
+            <button
+              className="btns-mobile-galeria"
+              onClick={() => imgAction('next-img')}
+            >
               <img src={setarigth} alt="icon seta" />
             </button>
           </div>
         </div>
       )}
-      <Container pad={pad}>
+      <Container pad={pad} className='test'>
         {!data.img && renderImages(images_2021, '2021')}
         {!data.img && renderImages(images_2018, '2018')}
         {!data.img && renderImages(images_2015, '2015')}
@@ -123,10 +153,5 @@ const GaleriaFotos = () => {
     </>
   );
 };
-
-
-
-
-
 
 export default GaleriaFotos;
