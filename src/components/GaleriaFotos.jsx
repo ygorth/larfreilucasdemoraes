@@ -13,6 +13,7 @@ import {
   images_2018,
   images_2021,
 } from '../fotosGaleria/imports';
+import { MobileContext } from './context/MobileContext';
 
 const Container = styled.div`
   margin: 0 auto;
@@ -53,6 +54,7 @@ const GaleriaFotos = () => {
   const [pad, setPad] = useState(false);
   const [screen, setScreen] = useState(window.innerWidth);
   const [valueScroll, setValueScroll] = useState(430)
+  const { mobile} = React.useContext(MobileContext);
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,11 +67,13 @@ const GaleriaFotos = () => {
   }, []);
 
   useEffect(()=>{
+    
     if(screen < 500){
-      setValueScroll(250)
+      !mobile ? setValueScroll(475) : setValueScroll(200)
     }
   },[screen])
 
+  console.log( mobile);
 
   const viewImage = (img, i, imgAno) => {
     setData({ img, i });

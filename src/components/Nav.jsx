@@ -5,6 +5,8 @@ import menu from '../assets/mobile.svg';
 import fechar from '../assets/x.svg';
 import { useState } from 'react';
 import '../styles/geral.css';
+import { useContext } from 'react';
+import { MobileContext } from './context/MobileContext';
 
 const Nave = styled.div`
   padding: 8px;
@@ -34,7 +36,7 @@ const Nave = styled.div`
   }
 
   @keyframes animar22 {
-    from{
+    from {
       opacity: 0;
       transform: translateY(-50px);
     }
@@ -46,9 +48,9 @@ const Nave = styled.div`
 
   @media (max-width: 1038px) {
     padding: 5px 10px;
-    display: ${({ mobile }) => mobile ? 'none' : 'block'};
+    display: ${({ mobile }) => (mobile ? 'none' : 'block')};
     opacity: 1;
-    animation: animar22 0.3s ease ;
+    animation: animar22 0.3s ease;
 
     ul {
       opacity: 1;
@@ -59,11 +61,7 @@ const Nave = styled.div`
   }
 
   @media (max-width: 500px) {
-  
-    display: ${({ mobile }) => mobile ? 'none' : 'block'};
-  
-
-   
+    display: ${({ mobile }) => (mobile ? 'none' : 'block')};
   }
 `;
 
@@ -93,17 +91,14 @@ const Botao = styled.button`
 `;
 
 const Nav = () => {
-  const [mobile, setMobile] = useState(1);
+ 
   const [screen, setScreen] = useState(window.innerWidth);
+  const { mobile, setMobile } = React.useContext(MobileContext);
 
   function handleClick() {
-    if (mobile === 1) {
-      setMobile(0);
-    } else {
-      setMobile(1);
-    }
+  setMobile(!mobile)
   }
-  
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -116,35 +111,37 @@ const Nav = () => {
   }, []);
 
   useEffect(() => {
-  if(screen < 500){
-    setMobile(0)
-  }
-  },[screen])
+    if (screen < 500) {
+      setMobile(0);
+    }
+  }, [screen]);
 
   return (
     <>
-      <Nave mobile={mobile} >
-        <ul>
-          <li>
-            <Link to="/">Início</Link>
-          </li>
-          <li>
-            <Link to="/historia">História</Link>
-          </li>
-          <li>
-            <NavLink to="/doacoes">Doações</NavLink>
-          </li>
-          <li>
-            <Link to="/fotos">Fotos</Link>
-          </li>
-          <li>
-            <Link to="/contato">Contato</Link>
-          </li>
-        </ul>
-      </Nave>
-      <Botao className="menu-mobile" onClick={handleClick} >
-        <img src={mobile ? menu : fechar} />
-      </Botao>
+      
+        <Nave mobile={mobile}>
+          <ul>
+            <li>
+              <Link to="/">Início</Link>
+            </li>
+            <li>
+              <Link to="/historia">História</Link>
+            </li>
+            <li>
+              <NavLink to="/doacoes">Doações</NavLink>
+            </li>
+            <li>
+              <Link to="/fotos">Fotos</Link>
+            </li>
+            <li>
+              <Link to="/contato">Contato</Link>
+            </li>
+          </ul>
+        </Nave>
+        <Botao className="menu-mobile" onClick={handleClick}>
+          <img src={mobile ? menu : fechar} />
+        </Botao>
+    
     </>
   );
 };

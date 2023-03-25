@@ -7,19 +7,18 @@ import Nav from './components/Nav';
 import Banner from './components/Banner';
 import Doe from './components/Doe';
 import { Footer } from './components/footer';
-
-
-
-
+import { MobileProvider } from './components/context/MobileContext';
 
 function App() {
   return (
     <>
-      <Banner />
-      <Slider />
-      <Nav />
-      <Outlet />
-      <Footer />
+      <MobileProvider>
+        <Banner />
+        <Slider />
+        <Nav />
+        <Outlet />
+        <Footer />
+      </MobileProvider>
     </>
   );
 }
