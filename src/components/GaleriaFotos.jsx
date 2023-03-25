@@ -73,7 +73,7 @@ const GaleriaFotos = () => {
     }
   },[screen])
 
-  console.log( mobile);
+
 
   const viewImage = (img, i, imgAno) => {
     setData({ img, i });
