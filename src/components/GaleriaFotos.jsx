@@ -28,7 +28,9 @@ const Container = styled.div`
 
   h2 {
     font-family: 'Lobster', cursive;
-    padding: 10px 0;
+    padding: 5px 0;
+
+    margin: 15px;
     font-size: 3rem;
     color: #253d4a;
     background: #a7c4d2;
