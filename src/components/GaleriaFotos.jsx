@@ -69,7 +69,7 @@ const GaleriaFotos = () => {
   useEffect(()=>{
     
     if(screen < 500){
-      !mobile ? setValueScroll(475) : setValueScroll(200)
+      !mobile ? setValueScroll(475) : setValueScroll(250)
     }
   },[screen])
 
