@@ -54,7 +54,7 @@ const GaleriaFotos = () => {
   function viewImage(img, i, imgAno) {
     setData({ img, i });
     setGalery(imgAno);
-
+    window.scrollTo({top:430, left:0})
     setPad(true);
   }
 
