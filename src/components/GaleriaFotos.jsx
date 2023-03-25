@@ -53,7 +53,7 @@ const GaleriaFotos = () => {
   const [galery, setGalery] = useState([]);
   const [pad, setPad] = useState(false);
   const [screen, setScreen] = useState(window.innerWidth);
-  const [valueScroll, setValueScroll] = useState(430)
+  const [valueScroll, setValueScroll] = useState(425)
   const { mobile} = React.useContext(MobileContext);
 
   useEffect(() => {
