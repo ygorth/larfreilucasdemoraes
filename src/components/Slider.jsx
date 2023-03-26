@@ -3,25 +3,18 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import seta from '../assets/seta.svg';
 import '../styles/slide.css';
-import img1 from '../fotosGaleria/2021/33.jpeg';
-import img2 from '../fotosGaleria/2021/30.jpeg';
-import img3 from '../fotosGaleria/2021/31.jpeg';
-import img4 from '../fotosGaleria/2021/29.jpeg';
-import img5 from '../fotosGaleria/2021/28.jpeg';
-import img6 from '../fotosGaleria/2021/27.jpeg';
-import img7 from '../fotosGaleria/2021/26.jpeg';
-import img8 from '../fotosGaleria/2021/25.jpeg';
-import img9 from '../fotosGaleria/2021/24.jpeg';
-import img10 from '../fotosGaleria/2021/23.jpeg';
-import img11 from '../fotosGaleria/2021/21.jpeg';
-import img12 from '../fotosGaleria/2021/20.jpeg';
+import img1 from '../fotosGaleria/2015/6.jpg';
+import img2 from '../fotosGaleria/2015/3.jpg';
+import img3 from '../fotosGaleria/2015/1.jpg';
+import img4 from '../fotosGaleria/2021/21.jpeg';
+import img5 from '../fotosGaleria/2021/31.jpeg';
+import img6 from '../fotosGaleria/2015/9.jpg';
+
 
 
 const imagens = [
   [img1, img2, img3],
   [img4, img5, img6],
-  [img7, img8, img9],
-  [img10, img11, img12],
 ];
 
 

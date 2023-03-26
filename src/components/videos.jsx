@@ -101,7 +101,7 @@ export const Videos = () => {
             src: 'https://www.youtube.com/embed/epaqZwHFQhk',
             title:
               'Matéria na Instituição Lar Frei Lucas de Moráes pela TV Aratu',
-          },
+          }
         ].map((video, index) => (
           <div key={video.id} >
            

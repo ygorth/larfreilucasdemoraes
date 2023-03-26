@@ -18,17 +18,8 @@ import img_2015_10 from '../fotosGaleria/2015/10.jpg';
 import img_2015_11 from '../fotosGaleria/2015/11.jpg';
 import img_2018_1 from '../fotosGaleria/2018/1.jpg';
 import img_2018_2 from '../fotosGaleria/2018/2.jpg';
-import img_2018_3 from '../fotosGaleria/2018/3.jpg';
-import img_2018_4 from '../fotosGaleria/2018/4.jpg';
-import img_2018_5 from '../fotosGaleria/2018/5.jpg';
 import img_2018_6 from '../fotosGaleria/2018/6.jpg';
-import img_2018_7 from '../fotosGaleria/2018/7.jpg';
-import img_2018_8 from '../fotosGaleria/2018/8.jpg';
 import img_2018_9 from '../fotosGaleria/2018/9.jpg';
-import img_2018_10 from '../fotosGaleria/2018/10.jpg';
-import img_2021_1 from '../fotosGaleria/2021/1.jpeg';
-import img_2021_2 from '../fotosGaleria/2021/2.jpeg';
-import img_2021_3 from '../fotosGaleria/2021/3.jpeg';
 import img_2021_4 from '../fotosGaleria/2021/4.jpeg';
 import img_2021_5 from '../fotosGaleria/2021/5.jpeg';
 import img_2021_6 from '../fotosGaleria/2021/6.jpeg';
@@ -42,8 +33,6 @@ import img_2021_13 from '../fotosGaleria/2021/13.jpeg';
 import img_2021_14 from '../fotosGaleria/2021/14.jpeg';
 import img_2021_15 from '../fotosGaleria/2021/15.jpeg';
 import img_2021_16 from '../fotosGaleria/2021/16.jpeg';
-import img_2021_17 from '../fotosGaleria/2021/17.jpeg';
-import img_2021_18 from '../fotosGaleria/2021/18.jpeg';
 import img_2021_19 from '../fotosGaleria/2021/19.jpeg';
 import img_2021_20 from '../fotosGaleria/2021/20.jpeg';
 import img_2021_21 from '../fotosGaleria/2021/21.jpeg';
@@ -51,6 +40,12 @@ import img_2021_22 from '../fotosGaleria/2021/28.jpeg';
 import img_2021_23 from '../fotosGaleria/2021/23.jpeg';
 import img_2021_24 from '../fotosGaleria/2021/24.jpeg';
 import img_2021_25 from '../fotosGaleria/2021/25.jpeg';
+import img_2021_26 from '../fotosGaleria/2021/26.jpeg';
+import img_2021_27 from '../fotosGaleria/2021/27.jpeg';
+import img_2021_28 from '../fotosGaleria/2021/28.jpeg';
+import img_2021_29 from '../fotosGaleria/2021/29.jpeg';
+import img_2021_30 from '../fotosGaleria/2021/30.jpeg';
+
 
 export const images_2012 = [
   img_2012_1,
@@ -81,9 +76,6 @@ export const images_2018 = [
 ];
 
 export const images_2021 = [
-  img_2021_1,
-  img_2021_2,
-  img_2021_3,
   img_2021_4,
   img_2021_5,
   img_2021_6,
@@ -92,5 +84,23 @@ export const images_2021 = [
   img_2021_9,
   img_2021_10,
   img_2021_11,
-  img_2021_12
+  img_2021_12,
+  img_2021_13,
+  img_2021_14,
+  img_2021_15,
+  img_2021_16,
+  img_2021_19,
+  img_2021_20,
+  img_2021_21,
+  img_2021_22,
+  img_2021_23,
+  img_2021_24,
+  img_2021_25,
+  img_2021_26,
+  img_2021_27,
+  img_2021_28,
+  img_2021_29,
+  img_2021_30,
+
+
 ];
