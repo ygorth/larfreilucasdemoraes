@@ -56,6 +56,7 @@ const TextDestaque = styled.aside`
   flex-direction: column;
   align-items: center;
   place-items: center;
+  place-self: center;
 
   h3 {
     padding-top: 10px;
@@ -76,7 +77,6 @@ const Destaque = styled.section`
 const ContentText = styled.div`
   display: grid;
   place-content: center;
-  place-items: center;
   max-width: 100%;
   margin: 0 15px;
 `;
