@@ -103,8 +103,9 @@ export const Footer = () => {
           <h2>
             Lar Frei Lucas<br></br> de Moráes
           </h2>
+          {/* © adicionar a data atual */}
           <p>
-            Instituição de Caridade Lar Frei Lucas de Moráes © 2015 - Sem fins
+            Instituição de Caridade Lar Frei Lucas de Moráes  - Sem fins
             lucrativos.
           </p>
           <Contato>
