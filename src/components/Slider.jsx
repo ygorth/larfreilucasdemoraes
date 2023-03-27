@@ -17,14 +17,13 @@ const imagens = [
   [img4, img5, img6],
 ];
 
+const imgsMobile =[
+  [img1, img2],
+  [img3, img4],
+  [img5, img6],
+]
 
 
-const imagensUnidimensional = imagens.reduce((acc, cur) => {
-  cur.forEach((img) => {
-    acc.push([img]);
-  });
-  return acc;
-}, []);
 
 
 
@@ -35,7 +34,7 @@ const Slider = () => {
 
   useEffect(()=>{
     if(screen < 500){
-      setRender(imagensUnidimensional)
+      setRender(imgsMobile)
     }else setRender(imagens)
   },[screen])
 
