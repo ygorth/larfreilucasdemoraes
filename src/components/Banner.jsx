@@ -5,6 +5,7 @@ import face from '../assets/face.svg';
 import ave from '../assets/ave.svg';
 import local from '../assets/local.svg';
 import '../styles/geral.css';
+import { Link } from 'react-router-dom';
 
 
 const BannerP = styled.main`
@@ -30,26 +31,7 @@ const BannerP = styled.main`
     }
   }
 
-  h1 {
-    font-family: 'Lobster', cursive;
-    padding: 10px 120px;
-    padding-bottom: 15px;
-    font-size: 3rem;
-    color: #253d4a;
-    background: #a7c4d2;
-
-    &::before {
-      padding: 0;
-      margin: 0;
-      content: url(${ave});
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: -15px;
-      left: 0px;
-      z-index: 0;
-    }
-  }
+  
   img {
     display: block;
     max-width: 40px;
@@ -84,32 +66,58 @@ const BannerP = styled.main`
     z-index: 10;
     place-items: center;
   }
-  @media (max-width: 1500px) {
-   
-    a{
-      max-width: 40ch;
-    }
-  }
-  @media (max-width: 1250px) {
-    h1 {
-      font-size: 2.5rem;
-      padding: 10px 10px 10px 100px;
-    }
-  
-  }
 
-  @media (max-width: 800px) {
-    h1 {
-      font-size: 2rem;
-      padding: 10px 10px;
-    }
-    h1:before {
-      display: none;
-    }
-  }
 
 `;
+const Title = styled.h1`
 
+margin: 10px 0px;
+a{
+
+    font-family: 'Lobster', cursive;
+    padding: 10px 120px;
+    padding-bottom: 15px;
+    font-size: 2.5rem;
+    color: #253d4a;
+    background: #a7c4d2;
+    
+    &::before {
+      padding: 0;
+      margin: 0;
+      content: url(${ave});
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: -15px;
+      left: 0px;
+      z-index: 2;
+    }
+  }
+
+  @media (max-width: 1500px) {
+   
+   a{
+     max-width: 40ch;
+   }
+ }
+ @media (max-width: 1250px) {
+   a {
+     font-size: 2.5rem;
+     padding: 10px 10px 10px 100px;
+   }
+ 
+ }
+
+ @media (max-width: 800px) {
+   a {
+     font-size: 2rem;
+     padding: 10px 10px;
+   }
+   a:before {
+     display: none;
+   }
+ }
+`
 const ContainerNav = styled.div`
   display: flex;
     flex-wrap: wrap;
@@ -126,7 +134,7 @@ const ContainerNav = styled.div`
 const Banner = () => {
   return (
     <BannerP className="responsivo-nav-title">
-      <h1 className="responsivo-title">Lar Frei Lucas de Moráes</h1>
+      <Title className="responsivo-title"><Link to={'/'}>Lar Frei Lucas de Moráes</Link></Title>
       <ContainerNav>
         <div>
           <a

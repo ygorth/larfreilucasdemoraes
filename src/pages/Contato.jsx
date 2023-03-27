@@ -16,7 +16,7 @@ const Container = styled.section`
 `;
 
 const Form = styled.form`
-  font-family: 'Roboto', sans-serif, Arial, Helvetica;
+
   font-weight: bold;
   border-radius: 16px;
   background: #a7c4d2;
@@ -38,6 +38,7 @@ const Form = styled.form`
     margin-bottom: 10px;
   }
   label {
+    font-family: 'Lobster', cursive;
     font-size: 1.2rem;
   }
   input {
@@ -182,7 +183,7 @@ const Contato = () => {
           name="message"
           cols="30"
           rows="10"
-          placeholder="digite sua mensagem"
+          placeholder="Digite sua mensagem"
           onChange={({ target }) => setMensagem(target.value)}
           value={mensagem}
         />
