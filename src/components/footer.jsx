@@ -95,6 +95,16 @@ const Final = styled.p`
 `;
 
 export const Footer = () => {
+  function getDataAtual() {
+    const dataAtual = new Date();
+    const dia = dataAtual.getDate().toString().padStart(2, '0');
+    const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0');
+    const ano = dataAtual.getFullYear().toString();
+    return `${dia}/${mes}/${ano}`;
+  }
+  
+
+
   return (
     <Container>
       <Aspas className="resposivo-detalhe aspas-f" src={aspas} />
@@ -105,7 +115,7 @@ export const Footer = () => {
           </h2>
           {/* © adicionar a data atual */}
           <p>
-            Instituição de Caridade Lar Frei Lucas de Moráes  - Sem fins
+          © {getDataAtual()} Instituição de Caridade <br/>Lar Frei Lucas de Moráes  - Sem fins
             lucrativos.
           </p>
           <Contato>

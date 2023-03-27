@@ -10,6 +10,10 @@ const Container = styled.div`
   display: grid;
   place-content: center;
   place-items: center;
+
+  h2 {
+    text-align: center;
+  }
 `;
 
 const Items = styled.div`
@@ -22,22 +26,23 @@ const Items = styled.div`
   flex-wrap: wrap;
   gap: 25px;
   padding: 0px 30px;
+`;
 
-  div {
-    width: 250px;
-    height: 280px;
-    border-radius: 19px;
-    background: #a7c4d2;
-    box-shadow: 8px 8px 16px #697b84, -8px -8px 16px #e5ffff;
-    display: grid;
-    justify-content: center;
-    place-items: center;
-    color: #253d4a;
+const Card = styled.div`
+  width: 250px;
+  height: 280px;
+  border-radius: 19px;
+  background: #a7c4d2;
+  box-shadow: 8px 8px 16px #697b84, -8px -8px 16px #e5ffff;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  color: #253d4a;
 
-    &:nth-child(odd) {
-      background: #253d4a;
-      color: #a7c4d2;
-    }
+  &:nth-child(odd) {
+    background: #253d4a;
+
+    color: #a7c4d2;
   }
 
   img {
@@ -54,39 +59,46 @@ const Insumos = styled.p`
   padding-bottom: 10px;
 `;
 
+const Title2 = styled.h3`
+  font-family: 'Lobster', cursive;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 2rem;
+`;
+
 const ItemsConsumidos = () => {
   return (
     <Container>
-      <h2>Nossos Custos Mensais</h2>
+      <Title2>Nossos Custos Mensais</Title2>
       <Items>
-        <div>
-          <img src={comida} alt="comida" /> <h2>3 toneladas</h2>
+        <Card>
+          <img src={comida} alt="comida" /> 
+          <Title2>3 toneladas</Title2>
           <Insumos>
             de alimentos <br></br> comsumidos por mês
           </Insumos>{' '}
-        </div>
-        <div>
+        </Card>
+        <Card>
           <img src={roupa} alt="comida" />
-          <h2>15 toneladas</h2>
+          <Title2>15 toneladas</Title2>
           <Insumos>
             de roupas <br></br>lavadas por mês
           </Insumos>
-        </div>
-        <div>
+        </Card>
+        <Card>
           <img src={medicamento} alt="comida" />
-          <h2>40 mil</h2>
+          <Title2>40 mil</Title2>
           <Insumos>
             reais em medicamentos/<br></br>insumos por mês
           </Insumos>
-        </div>
-        <div>
+        </Card>
+        <Card>
           <img src={frauda} alt="comida" />
           <h5>300</h5>
           <Insumos>
             fraudas descartáveis<br></br> por dia
           </Insumos>
-        </div>
-      
+        </Card>
       </Items>
       <p>*Valores aproximados</p>
     </Container>

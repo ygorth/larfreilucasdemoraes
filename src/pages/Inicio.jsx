@@ -181,7 +181,6 @@ const Inicio = () => {
 
           <Doe />
         </Content>
-
         {/* a espera do frei passar os valores <ItemsConsumidos /> */}
         <Videos />
       </Home>
