@@ -10,6 +10,8 @@ import { Footer } from './components/footer';
 import { MobileProvider } from './components/context/MobileContext';
 
 function App() {
+
+  
   return (
     <>
       <MobileProvider>

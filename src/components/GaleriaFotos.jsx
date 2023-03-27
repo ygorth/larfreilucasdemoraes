@@ -52,19 +52,11 @@ const GaleriaFotos = () => {
   const [data, setData] = useState({ img: '', i: 0 });
   const [galery, setGalery] = useState([]);
   const [pad, setPad] = useState(false);
-  const [screen, setScreen] = useState(window.innerWidth);
+  
   const [valueScroll, setValueScroll] = useState(425)
-  const { mobile} = React.useContext(MobileContext);
+  const { mobile, screen} = React.useContext(MobileContext);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setScreen(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+
 
   useEffect(()=>{
     
@@ -103,7 +95,7 @@ const GaleriaFotos = () => {
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
         <Masonry gutter="20px">
           {images.map((image, i) => (
-            <div key={image}>
+            <div key={i}>
               <img src={image} onClick={() => viewImage(image, i, images)} />
             </div>
           ))}

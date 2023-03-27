@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import React,{useContext, useEffect, useState} from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import seta from '../assets/seta.svg';
@@ -9,7 +9,7 @@ import img3 from '../fotosGaleria/2015/1.jpg';
 import img4 from '../fotosGaleria/2021/21.jpeg';
 import img5 from '../fotosGaleria/2021/31.jpeg';
 import img6 from '../fotosGaleria/2015/9.jpg';
-
+import { MobileContext } from './context/MobileContext';
 
 
 const imagens = [
@@ -18,10 +18,26 @@ const imagens = [
 ];
 
 
+
+const imagensUnidimensional = imagens.reduce((acc, cur) => {
+  cur.forEach((img) => {
+    acc.push([img]);
+  });
+  return acc;
+}, []);
+
+
+
 const Slider = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const [render, setRender] = useState(imagens)
+  const {screen} = React.useContext(MobileContext);
 
-
+  useEffect(()=>{
+    if(screen < 500){
+      setRender(imagensUnidimensional)
+    }else setRender(imagens)
+  },[screen])
 
   const scrollPrev = React.useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -34,7 +50,7 @@ const Slider = () => {
   return (
     <div className="embla" ref={emblaRef}>
       <div className="embla__container">
-        {imagens.map((i) => (
+        {render.map((i) => (
           <div key={i} className="embla__slide">
             {i.map((item) => (
               <div key={item}>

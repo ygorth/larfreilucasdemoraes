@@ -128,7 +128,7 @@ object-fit: cover;
 }
 @media (max-width: 500px){
   .embla__slide img{
-    height: 70px;
+    height: 150px;
   }
 }
 
