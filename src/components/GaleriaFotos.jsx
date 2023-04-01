@@ -56,7 +56,7 @@ const GaleriaFotos = () => {
   const [valueScroll, setValueScroll] = useState(425)
   const { mobile, screen} = React.useContext(MobileContext);
 
-
+  
 
   useEffect(()=>{
     

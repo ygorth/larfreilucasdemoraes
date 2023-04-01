@@ -5,6 +5,7 @@ export const MobileContext = createContext({});
 export function MobileProvider({ children }) {
   const [mobile, setMobile] = useState(true);
   const [screen, setScreen] = useState(window.innerWidth);
+  
   useEffect(() => {
     const handleResize = () => {
       setScreen(window.innerWidth);
