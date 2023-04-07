@@ -7,7 +7,7 @@ import local from '../assets/local.svg';
 import '../styles/geral.css';
 import { Link } from 'react-router-dom';
 
-
+//test
 const BannerP = styled.main`
   font-family: 'Lobster', cursive;
   display: flex;
