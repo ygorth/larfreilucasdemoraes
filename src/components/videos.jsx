@@ -52,7 +52,7 @@ const Video1 = styled.iframe`
 `;
 
 export const Videos = () => {
-  const [videos, setVideos] = useState([250, 250, 250, 250, 250]);
+  const [videos, setVideos] = useState([250, 250, 250, 250, 250, 250]);
 
   function handleVideo(index) {
     const screenWidth = window.innerWidth;
@@ -92,6 +92,16 @@ export const Videos = () => {
       id: 4,
       src: 'https://www.youtube.com/embed/epaqZwHFQhk',
       title: 'Matéria na Instituição Lar Frei Lucas de Moráes pela TV Aratu',
+    },
+    {
+      id: 5,
+      src: 'https://www.youtube.com/embed/cJ3kiHzBPkQ',
+      title: '2025 - Lar de Caridade Frei Lucas falamos com Ana',
+    },
+    {
+      id: 6,
+      src: 'https://www.youtube.com/embed/Uo96DV7ym1s',
+      title: '2025 - Nosso querido Francisco cantando',
     },
   ];
 
