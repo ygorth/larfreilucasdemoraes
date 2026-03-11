@@ -40,29 +40,6 @@ const Text = styled.p`
     max-width: 70ch;
   }
 `;
-const TextDestaque = styled.aside`
-  background: #a7c4d2;
-  box-shadow: 9px 9px 18px #788d97, -9px -9px 18px #d6fbff;
-  border-radius: 20px;
-  max-width: 120ch;
-  margin: 5px;
-  margin-top: 18px;
-  font-weight: bold;
-  text-align: start;
-  padding: 10px;
-  line-height: 1.4em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  place-items: center;
-  place-self: center;
-
-  h3 {
-    padding-top: 10px;
-    font-size: 1.5rem;
-    white-space: nowrap;
-  }
-`;
 
 const Destaque = styled.section`
   margin-top: 10px;
@@ -103,6 +80,47 @@ const Content = styled.div`
 `;
 const Lin = styled.a`
   margin: 0px;
+`;
+
+const CardRow = styled.div`
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+`;
+
+const Card = styled.aside`
+  background: #a7c4d2;
+  box-shadow: 9px 9px 18px #788d97, -9px -9px 18px #d6fbff;
+  border-radius: 20px;
+  flex: 1;
+  min-width: 220px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+
+  span {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  h3 {
+    font-family: 'Lobster', cursive;
+    font-size: 1.4rem;
+    color: #253d4a;
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #253d4a;
+    margin: 0;
+    flex: 1;
+  }
 `;
 
 
@@ -164,28 +182,29 @@ const Inicio = () => {
               </Link>
             </Destaque>
 
-            <TextDestaque>
-              <h3>Área Médica</h3>
-              <Text>
-                O Lar necessita de profissionais nas áreas de geriatria,
-                nutrição, enfermagem, assistência social e fisioterapia. Quem
-                puder dedicar parte do seu tempo de forma voluntária, os idosos
-                precisam urgentemente destes atendimentos. Procure-nos!
-              </Text>
+            <CardRow>
+              <Card>
+                <span>🏥</span>
+                <h3>Área Médica</h3>
+                <p>
+                  O Lar necessita de profissionais nas áreas de geriatria,
+                  nutrição, enfermagem, assistência social e fisioterapia. Quem
+                  puder dedicar parte do seu tempo de forma voluntária, os
+                  idosos precisam urgentemente destes atendimentos.
+                </p>
+                <Link className="link" to="/contato">Contato</Link>
+              </Card>
 
-              <Link className="link " to="/contato" >
-                Contato
-              </Link>
-            </TextDestaque>
-
-            <TextDestaque>
-              <h3>Vídeos</h3>
-              <Text>
-                Assista às matérias sobre o Lar Frei Lucas de Moráes e veja de
-                perto o cuidado e o amor dedicado aos nossos idosos.
-              </Text>
-              <Link className="link" to="/videos">Ver vídeos</Link>
-            </TextDestaque>
+              <Card>
+                <span>📺</span>
+                <h3>Vídeos</h3>
+                <p>
+                  Assista às matérias sobre o Lar Frei Lucas de Moráes e veja
+                  de perto o cuidado e o amor dedicado aos nossos idosos.
+                </p>
+                <Link className="link" to="/videos">Ver vídeos</Link>
+              </Card>
+            </CardRow>
           </ContentText>
 
           <Doe />
