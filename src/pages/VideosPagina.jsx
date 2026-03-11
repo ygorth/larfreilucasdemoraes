@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 const videosData = [
@@ -132,10 +132,16 @@ const Card = styled.button`
 
 const VideosPagina = () => {
   const [selected, setSelected] = useState(0);
+  const playerRef = useRef(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
   }, []);
+
+  function handleSelect(index) {
+    setSelected(index);
+    playerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   const current = videosData[selected];
 
@@ -143,7 +149,7 @@ const VideosPagina = () => {
     <Container className="paginas">
       <Title>Vídeos no Lar Frei Lucas de Moráes</Title>
 
-      <PlayerWrapper>
+      <PlayerWrapper ref={playerRef}>
         <IframeContainer>
           <iframe
             src={`https://www.youtube.com/embed/${current.videoId}?autoplay=1`}
@@ -157,7 +163,7 @@ const VideosPagina = () => {
 
       <Grid>
         {videosData.map((v, i) => (
-          <Card key={v.id} active={i === selected} onClick={() => setSelected(i)}>
+          <Card key={v.id} active={i === selected} onClick={() => handleSelect(i)}>
             <img
               src={`https://img.youtube.com/vi/${v.videoId}/mqdefault.jpg`}
               alt={v.title}
