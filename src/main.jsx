@@ -9,6 +9,7 @@ import Doacoes from './pages/Doacoes';
 import Fotos from './pages/Fotos';
 import Contato from './pages/Contato';
 import NaoEncontrada from './pages/NaoEncontrada';
+import VideosPagina from './pages/VideosPagina';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path:'/contato',
         element:<Contato/>
+      },
+      {
+        path:'/videos',
+        element:<VideosPagina/>
       },
     ]
   },

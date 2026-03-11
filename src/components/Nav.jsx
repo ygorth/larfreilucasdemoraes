@@ -134,6 +134,9 @@ const Nav = () => {
               <Link to="/fotos">Fotos</Link>
             </li>
             <li>
+              <Link to="/videos">Videos</Link>
+            </li>
+            <li>
               <Link to="/contato">Contato</Link>
             </li>
           </ul>
