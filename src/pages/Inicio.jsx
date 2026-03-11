@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import '../styles/geral.css';
 import { Link } from 'react-router-dom';
-import { Videos } from '../components/videos';
 import ItemsConsumidos from '../components/ItemsConsumidos';
 import Doe from '../components/Doe';
 
@@ -106,6 +105,42 @@ const Lin = styled.a`
   margin: 0px;
 `;
 
+const BannerVideos = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #a7c4d2;
+  box-shadow: 8px 8px 16px #697b84, -8px -8px 16px #e5ffff;
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin: 20px 16px 10px;
+  flex-wrap: wrap;
+
+  span {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  div {
+    flex: 1;
+    min-width: 200px;
+
+    h3 {
+      font-family: 'Lobster', cursive;
+      font-size: 1.5rem;
+      color: #253d4a;
+      margin: 0 0 6px;
+    }
+
+    p {
+      margin: 0;
+      color: #253d4a;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+  }
+`;
+
 const Inicio = () => {
   return (
     <>
@@ -182,7 +217,14 @@ const Inicio = () => {
           <Doe />
         </Content>
         {/* a espera do frei passar os valores <ItemsConsumidos /> */}
-        <Videos />
+        <BannerVideos>
+          <span>📺</span>
+          <div>
+            <h3>Conheça o nosso trabalho!</h3>
+            <p>Assista às matérias sobre o Lar Frei Lucas de Moráes e veja de perto o cuidado e o amor dedicado aos nossos idosos.</p>
+          </div>
+          <Link className="link" to="/videos">Ver vídeos</Link>
+        </BannerVideos>
       </Home>
     </>
   );
