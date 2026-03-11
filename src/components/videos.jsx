@@ -108,7 +108,7 @@ export const Videos = () => {
   
   return (
     <>
-      <Title>Matérias sobre o lar Frei Lucas de Moráes</Title>
+      <Title>Videos no lar Frei Lucas de Moráes</Title>
       <Video>
         {videosArray.map((video, index) => (
           <div key={video.id}>
