@@ -194,6 +194,22 @@ const Contato = () => {
 
   return (
     <Container className="paginas">
+      <InfoContato>
+        <ItemContato>
+          <img src={telefone} alt="telefone" />
+          <span>(71) 4141-4765</span>
+        </ItemContato>
+        <ItemContato>
+          <img src={whatsapp} alt="whatsapp" />
+          <a
+            href="https://wa.me/557191896038"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            (71) 9189-6038
+          </a>
+        </ItemContato>
+      </InfoContato>      
       <Form onSubmit={sendEmail}>
         <h1>Entre em contato conosco</h1>
         <label htmlFor="nome">Nome</label>
@@ -227,22 +243,6 @@ const Contato = () => {
         {emailEnv && <Msg>Email Enviado!</Msg>}
         <button type="submit">Enviar</button>
       </Form>
-      <InfoContato>
-        <ItemContato>
-          <img src={telefone} alt="telefone" />
-          <span>(71) 4141-4765</span>
-        </ItemContato>
-        <ItemContato>
-          <img src={whatsapp} alt="whatsapp" />
-          <a
-            href="https://wa.me/557191896038"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            (71) 9189-6038
-          </a>
-        </ItemContato>
-      </InfoContato>
       <Mapa
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7777.402438063098!2d-38.5051637!3d-12.9269149!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7160f8aad4d64b7%3A0x5979ad4612615141!2sLar%20Frei%20Lucas%20de%20Mor%C3%A1es!5e0!3m2!1spt-BR!2sbr!4v1676651134887!5m2!1spt-BR!2sbr"
         referrerPolicy="no-referrer-when-downgrade"
