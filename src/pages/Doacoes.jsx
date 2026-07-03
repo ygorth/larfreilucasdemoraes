@@ -91,15 +91,15 @@ const Text = styled.p`
   line-height: 1.5em;
 `;
 const WhatsAppLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
   color: #253d4a;
   font-weight: bold;
   text-decoration: none;
+  white-space: nowrap;
 
   img {
     width: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
   }
 
   &:hover {
@@ -182,7 +182,6 @@ const Doacoes = () => {
               <img src={whatsapp} alt="whatsapp" />
               (71) 99189-6038
             </WhatsAppLink>
-            .
           </Text>
 
           <h2>Alimentos</h2>
