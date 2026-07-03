@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
+import telefone from '../assets/telefone.svg';
+import whatsapp from '../assets/whatsapp.svg';
 
 const Container = styled.section`
   margin: 0 auto;
@@ -86,6 +88,41 @@ const Form = styled.form`
     }
   }
 `;
+const InfoContato = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  background: #a7c4d2;
+  border-radius: 16px;
+  box-shadow: 9px 9px 18px #788d97, -9px -9px 18px #d6fbff;
+  padding: 25px;
+  color: #253d4a;
+  font-weight: bold;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+`;
+
+const ItemContato = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+
+  img {
+    width: 32px;
+  }
+
+  a {
+    color: #253d4a;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
 const Msg = styled.p`
   transition: 0.5s;
   margin-top: 10px;
@@ -190,6 +227,22 @@ const Contato = () => {
         {emailEnv && <Msg>Email Enviado!</Msg>}
         <button type="submit">Enviar</button>
       </Form>
+      <InfoContato>
+        <ItemContato>
+          <img src={telefone} alt="telefone" />
+          <span>(71) 4141-4765</span>
+        </ItemContato>
+        <ItemContato>
+          <img src={whatsapp} alt="whatsapp" />
+          <a
+            href="https://wa.me/557191896038"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            (71) 9189-6038
+          </a>
+        </ItemContato>
+      </InfoContato>
       <Mapa
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7777.402438063098!2d-38.5051637!3d-12.9269149!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7160f8aad4d64b7%3A0x5979ad4612615141!2sLar%20Frei%20Lucas%20de%20Mor%C3%A1es!5e0!3m2!1spt-BR!2sbr!4v1676651134887!5m2!1spt-BR!2sbr"
         referrerPolicy="no-referrer-when-downgrade"
