@@ -145,11 +145,11 @@ export const Footer = () => {
             <Icons src={telefone} alt="whatsapp" />
             <p>
               <a
-                href="https://wa.me/557191896038"
+                href="https://wa.me/5571991896038"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp: (71) 9189-6038
+                WhatsApp: (71) 99189-6038
               </a>
             </p>
           </Contato>

@@ -88,7 +88,15 @@ const Doe = () => {
           <p>
             Diariamente, inclusive sábados e domingos de 09h às 17h. Outros
             Horários, fale com Frei Florisvaldo em (71) 4141-4765 ou pelo
-            WhatsApp (71) 9189-6038.
+            WhatsApp{' '}
+            <a
+              href="https://wa.me/5571991896038"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              (71) 99189-6038
+            </a>
+            .
           </p>
         </li>
         <li>

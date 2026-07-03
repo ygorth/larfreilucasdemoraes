@@ -202,11 +202,11 @@ const Contato = () => {
         <ItemContato>
           <img src={whatsapp} alt="whatsapp" />
           <a
-            href="https://wa.me/557191896038"
+            href="https://wa.me/5571991896038"
             target="_blank"
             rel="noopener noreferrer"
           >
-            (71) 9189-6038
+            (71) 99189-6038
           </a>
         </ItemContato>
       </InfoContato>      
