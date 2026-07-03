@@ -139,7 +139,19 @@ export const Footer = () => {
           <h2>Contato</h2>
           <Contato>
             <Icons src={telefone} alt="telefone" />
-            <p>(71) 3207-7033 | 3208-2763</p>
+            <p>(71) 4141-4765</p>
+          </Contato>
+          <Contato>
+            <Icons src={telefone} alt="whatsapp" />
+            <p>
+              <a
+                href="https://wa.me/557191896038"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp: (71) 9189-6038
+              </a>
+            </p>
           </Contato>
 
           <Contato>

@@ -87,7 +87,8 @@ const Doe = () => {
           <h3> Hórarios de Visitas</h3>
           <p>
             Diariamente, inclusive sábados e domingos de 09h às 17h. Outros
-            Horários, fale com Frei Florisvaldo em (71) 3207.7033.
+            Horários, fale com Frei Florisvaldo em (71) 4141-4765 ou pelo
+            WhatsApp (71) 9189-6038.
           </p>
         </li>
         <li>
