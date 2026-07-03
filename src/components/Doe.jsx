@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import '../styles/geral.css';
 import pix from '../assets/pix.svg';
+import whatsapp from '../assets/whatsapp.svg';
 import Paypal from './Paypal';
 
 export const Section = styled.section`
@@ -73,6 +74,23 @@ place-content: center;
 
 `
 
+const WhatsAppLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #253d4a;
+  font-weight: bold;
+  text-decoration: none;
+
+  img {
+    width: 16px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
 
 const Doe = () => {
   return (
@@ -89,13 +107,14 @@ const Doe = () => {
             Diariamente, inclusive sábados e domingos de 09h às 17h. Outros
             Horários, fale com Frei Florisvaldo em (71) 4141-4765 ou pelo
             WhatsApp{' '}
-            <a
+            <WhatsAppLink
               href="https://wa.me/5571991896038"
               target="_blank"
               rel="noopener noreferrer"
             >
+              <img src={whatsapp} alt="whatsapp" />
               (71) 99189-6038
-            </a>
+            </WhatsAppLink>
             .
           </p>
         </li>
